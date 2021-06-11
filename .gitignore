@@ -47,6 +47,7 @@ npm-debug.log
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/vcs.xml
 
 # Generated files
 .idea/**/contentModel.xml
