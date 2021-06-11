@@ -1,0 +1,43 @@
+name: Generate pages
+
+on: [ push, pull_request ]
+
+jobs:
+  deploy:
+    name: Generate pages
+    runs-on: ubuntu-latest
+    if: "! contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.1.5
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache node_modules
+        uses: actions/cache@v2.1.6
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build pages
+        run: yarn build
+
+      - name: Generate pages
+        run: yarn generate
+
+      - uses: actions/upload-artifact@v2.2.3
+        with:
+          name: Package
+          path: dist
