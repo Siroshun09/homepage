@@ -48,6 +48,9 @@ npm-debug.log
 .idea/**/dictionaries
 .idea/**/shelf
 .idea/vcs.xml
+.idea/misc.xml
+.idea/homepage.iml
+.idea/modules.xml
 
 # Generated files
 .idea/**/contentModel.xml
