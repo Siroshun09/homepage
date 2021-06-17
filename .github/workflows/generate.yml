@@ -37,7 +37,7 @@ jobs:
       - name: Generate pages
         run: yarn generate
 
-      - uses: actions/upload-artifact@v2.2.3
+      - uses: actions/upload-artifact@v2.2.4
         with:
           name: Package
           path: dist
