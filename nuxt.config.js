@@ -50,11 +50,20 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://google-fonts.nuxtjs.org
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+
+  googleFonts: {
+    families: {
+      "Sawarabi Gothic": [400]
+    },
+    display: 'swap'
+  },
 }
