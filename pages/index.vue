@@ -1,16 +1,16 @@
 <template>
-  <div class="container">
-    This is the homepage of Siroshun09.
+  <div class="mx-auto container">
+    <Header/>
+    <div class="text-base m-5 text-gray-800">
+      <p>This page is a work in progress.</p>
+    </div>
   </div>
 </template>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<script>
+import Header from "@/components/Header";
+
+export default {
+  components: {Header}
 }
-</style>
+</script>
