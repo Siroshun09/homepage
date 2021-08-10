@@ -8,11 +8,11 @@
       </a>
 
       <nav class="my-auto text-2xl text-gray-400">
-        <a href="#">
+        <NuxtLink to="contact">
           <button class="px-1.5 hover:text-gray-700">
-            Button 1
+            Contact
           </button>
-        </a>
+        </NuxtLink>
         <a href="#">
           <button class="px-1.5 hover:text-gray-700">
             Button 2
