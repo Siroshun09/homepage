@@ -14,7 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "core-js": "^3.16.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",
