@@ -4,7 +4,7 @@
       <a href="." class="flex mx-8">
         <img src="@/assets/icons/icon.png" alt="Siroshun's Icon"
              class="w-10 h-10 rounded-full border border-gray-700 my-auto"/>
-        <p class="text-3xl ml-3 my-auto text-gray-400 hover:text-gray-700"> Siroshun </p>
+        <p class="text-3xl ml-3 my-auto text-gray-800"> Siroshun </p>
       </a>
 
       <nav class="my-auto text-2xl text-gray-400">
