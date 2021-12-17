@@ -1,30 +1,156 @@
 <template>
-  <div>
-    <div class="m-5">
-      <h1>Hello, I'm Siroshun.</h1>
-      <p>I'm a Java programmer, mainly developing software for Minecraft.</p>
-      <p>I also enjoy creating libraries for Java and learning new programming languages and technologies.</p>
-      <br/>
-      <p>I usually use <code>Siroshun09</code> for my online id.</p>
-      <p>If you want to contact me, please see <NuxtLink to="contact">this page</NuxtLink>.</p>
+  <div class="profile-container">
+    <div class="card fadeUp">
+      <div class="profile" v-if="profile">
+        <img src="@/assets/icons/icon.jpg" alt="Siroshun's Icon" class="icon"/>
+        <h1>Siroshun</h1>
+        <p>Hello, I am a Japanese university student.</p>
+        <p>I love Ayataka, programming, and Minecraft!</p>
+        <div class="links">
+          <a href="https://twitter.com/siroshun09" target="_blank" rel="noopener">
+            <button class="link-button">
+              <font-awesome-icon :icon="['fab', 'twitter']" fixed-width/>
+            </button>
+          </a>
+          <a href="https://github.com/Siroshun09" target="_blank" rel="noopener">
+            <button class="link-button">
+              <font-awesome-icon :icon="['fab', 'github']" fixed-width/>
+            </button>
+          </a>
+        </div>
+        <small>If you want to contact me, please
+          <span class="profile-change" @click="profile = !profile">click here</span>
+          for more information.</small>
+        <br/>
+        <small>© 2021 Siroshun</small>
+      </div>
+      <div class="contact-me" v-else>
+        <h1>How to contact me?</h1>
+
+        <p>Twitter or Discord DM is the quickest way to get a response.</p>
+
+        <ul>
+          <li>Twitter: <a href="https://twitter.com/siroshun09">Siroshun09</a></li>
+          <li>Discord: <code>Siroshun09#7501</code> (id: <code>340865494406004737</code>)</li>
+        </ul>
+
+        <p>If you are using Discord, please send me a friend request first.</p>
+
+        <br/>
+
+        <p>Alternatively, you can contact me via email.</p>
+
+        <p>My e-mail address is <code>siroshun@pm.me</code> (<code>siroshun@protonmail.com</code>).</p>
+
+        <p>In case of email, there may be a delay in replying.</p>
+
+        <p>I'll sign the email, so you can use <!--suppress HtmlUnknownTarget -->
+          <a href="mail_pgp.asc">AE6A E203 1CBF B24C</a> to verify it.</p>
+
+        <div class="my-5">
+          <p class="profile-change text-center" @click="profile = !profile">Return to profile</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  data() {
+    return {
+      profile: true
+    }
+  }
+})
+</script>
+
+
 <style scoped>
-h1 {
-  @apply text-3xl my-2 text-black
+.profile-container {
+  @apply h-full bg-gradient-to-br from-indigo-300 to-blue-400 flex justify-center
+}
+
+.card {
+  @apply m-auto w-max bg-white rounded-3xl p-5
+}
+
+.profile {
+  @apply text-center
+}
+
+.profile h1 {
+  @apply text-5xl my-5 mx-auto px-10 py-1 text-gray-500 border-b border-gray-300 tracking-wider
+}
+
+.contact-me {
+}
+
+.contact-me h1 {
+  @apply text-4xl my-3 mx-auto px-1 py-2 text-gray-500 border-b border-gray-300 tracking-wider
+}
+
+.contact-me p {
+  @apply text-lg
+}
+
+.contact-me ul {
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  @apply text-lg my-3
+}
+
+.icon {
+  @apply w-48 h-48 mx-auto rounded-full my-5
 }
 
 p {
-  @apply text-base text-gray-800
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  @apply text-xl text-gray-900 my-1
+}
+
+.links {
+  @apply flex my-10 text-5xl justify-center
+}
+
+.link-button {
+  @apply px-5 text-blue-300 hover:text-blue-400
+}
+
+.profile-change {
+  @apply text-blue-500 hover:text-blue-700 cursor-pointer
 }
 
 a {
-  @apply text-blue-600 hover:text-blue-800
+  @apply text-blue-500 hover:text-blue-700
+}
+
+small {
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  @apply text-base
 }
 
 code {
-  @apply bg-gray-200 px-1.5 rounded text-black
+  @apply bg-gray-200 px-1 rounded text-black
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: rotateX(25deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }
 </style>

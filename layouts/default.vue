@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Nuxt/>
-  </div>
+  <Nuxt/>
 </template>
 
 <style>
@@ -14,6 +12,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  height: 100%;
+}
+
+/*noinspection CssUnusedSymbol*/
+html, body, #__nuxt, #__layout, #__layout {
+  height: 100%;
 }
 
 *,
@@ -21,5 +25,9 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+h1 {
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 </style>

@@ -6,15 +6,26 @@ export default {
   head: {
     title: 'homepage',
     htmlAttrs: {
-      lang: 'ja'
+      lang: 'en',
+      prefix: 'og: https://ogp.me/ns#'
     },
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''},
+      {hid: 'description', name: 'description', content: 'A homepage of Siroshun'},
       {name: "msapplication-TileColor", content: "#ffffff"},
       {name: "msapplication-TileImage", content: "/ms-icon-144x144.png"},
-      {name: "theme-color", content: "#ffffff"}
+      {name: "theme-color", content: "#ffffff"},
+      {hid: 'og:site_name', property: 'og:site_name', content: 'Siroshun'},
+      {hid: 'og:type', property: 'og:type', content: 'website'},
+      {hid: 'og:url', property: 'og:url', content: 'https://siroshun09.github.io'},
+      {hid: 'og:title', property: 'og:title', content: 'Siroshun'},
+      {hid: 'og:description', property: 'og:description', content: 'A homepage of Siroshun'},
+      {hid: 'og:image', property: 'og:image', content: 'https://i.imgur.com/xwV3w6t.jpg'},
+      {hid: 'og:image:type', property: 'og:image:type', content: 'image/jpeg'},
+      {name: 'twitter:card', content: 'summary'},
+      {name: 'twitter:site', content: '@siroshun09'},
+      {name: 'twitter:creator', content: '@siroshun09'},
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
@@ -62,7 +73,8 @@ export default {
 
   googleFonts: {
     families: {
-      "Sawarabi Gothic": [400]
+      "Rubik": [400],
+      "Karla": [600]
     },
     display: 'swap'
   },
