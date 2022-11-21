@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3.3.0
+        uses: actions/setup-node@v3.5.1
         with:
           node-version: '16'
           cache: 'yarn'
@@ -26,7 +26,9 @@ jobs:
       - name: Generate pages
         run: yarn generate
 
-      - uses: actions/upload-artifact@v3.1.0
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3.1.1
+        continue-on-error: true
         with:
-          name: Package
-          path: dist
+          name: homepage-build-${{ github.run_number }}
+          path: ./.output/public

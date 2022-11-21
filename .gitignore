@@ -8,6 +8,9 @@
 ### Nuxt ###
 .nuxt
 dist
+.output
+assets/fonts
+assets/css/fonts.css
 
 ### Nuxtjs ###
 node_modules

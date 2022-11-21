@@ -1,7 +1,7 @@
-import Vue from 'vue'
+// https://fontawesome.com/docs/web/use-with/vue/use-with#nuxt
 
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   faGithub,
   faTwitter,
@@ -15,4 +15,9 @@ library.add(
   faTwitter
 )
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+// This is important, we are going to let Nuxt worry about the CSS
+config.autoAddCss = false
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon)
+})

@@ -1,33 +1,34 @@
 <template>
   <section class="error-occurred">
-    <div v-if="error.statusCode === 404" class="error">
+    <div v-if="error.statusCode === '404'" class="error">
+      <Head>
+        <Title>Page Not Found</Title>
+      </Head>
       <h1>
         <font-awesome-icon :icon="['fa', 'exclamation-circle']" fixed-width/>
-        <span>Not found!</span>
+        <span>Page Not found</span>
       </h1>
+      <p>The page {{ error.url }} is not found.</p>
       <p><NuxtLink to="/">Return to the profile page</NuxtLink></p>
     </div>
     <div v-else class="error">
+      <Head>
+        <Title>An Error Occurred</Title>
+      </Head>
       <h1>
         <font-awesome-icon :icon="['fa', 'exclamation-circle']" fixed-width/>
         <span>An error occurred!</span>
       </h1>
       <p>Message: {{ error.message }}</p>
-      <p><NuxtLink to="/">Return to the profile page</NuxtLink></p>
+      <p>
+        <NuxtPage to="/">Return to the profile page</NuxtPage>
+      </p>
     </div>
   </section>
 </template>
 
-<!--suppress JSUnusedGlobalSymbols -->
-<script>
-export default {
-  name: 'NotFound',
-  metaInfo: {
-    title: 'Not Found',
-  },
-  props: ['error'],
-  layout: 'error',
-}
+<script setup lang="ts">
+const error = useError()
 </script>
 
 <style scoped>
@@ -40,7 +41,7 @@ h1 {
 }
 
 p {
-  @apply text-base text-gray-700
+  @apply text-xl text-gray-700
 }
 
 a {

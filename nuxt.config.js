@@ -1,4 +1,4 @@
-export default {
+export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -56,20 +56,30 @@ export default {
   components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+  modules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://google-fonts.nuxtjs.org
     '@nuxtjs/google-fonts'
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: [
+      '@fortawesome/vue-fontawesome'
+    ],
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+        },
+      },
+    },
+  },
+
+  typescript: {
+    strict: true
+  },
 
   googleFonts: {
     families: {
@@ -78,4 +88,4 @@ export default {
     },
     display: 'swap'
   },
-}
+})

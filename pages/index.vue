@@ -55,18 +55,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  data() {
-    return {
-      profile: true
-    }
-  }
-})
+<script setup lang="ts">
+let profile = ref(true);
 </script>
-
 
 <style scoped>
 .profile-container {
