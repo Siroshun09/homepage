@@ -22,7 +22,7 @@
           <span class="profile-change" @click="profile = !profile">click here</span>
           for more information.</small>
         <br/>
-        <small>© 2021-2022 Siroshun</small>
+        <small>© 2021-2023 Siroshun</small>
       </div>
       <div class="contact-me" v-else>
         <h1>How to contact me?</h1>
