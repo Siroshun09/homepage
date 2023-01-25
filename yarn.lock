@@ -579,13 +579,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/vue-fontawesome@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "@fortawesome/vue-fontawesome@npm:3.0.2"
+"@fortawesome/vue-fontawesome@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@fortawesome/vue-fontawesome@npm:3.0.3"
   peerDependencies:
     "@fortawesome/fontawesome-svg-core": ~1 || ~6
     vue: ">= 3.0.0 < 4"
-  checksum: a67aff78d994d73dcd110b8554af0aefb516410be2c22ea09f665592f56af3c7e715291ff6d50993e507facd3a7c2c5808ba8ca08472101b6b3fb0f71254c232
+  checksum: a3ec4db7c849c8378eb25c35a8e7905a37df9d3263d5284d0ce8bd9cff1d79bc7015ec68e7a2d29aedb521408f2d47bfb90a8756262394e8e2cb6e9bc73a3b41
   languageName: node
   linkType: hard
 
@@ -3694,7 +3694,7 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.2.1
     "@fortawesome/free-brands-svg-icons": ^6.2.1
     "@fortawesome/free-solid-svg-icons": ^6.2.1
-    "@fortawesome/vue-fontawesome": ^3.0.2
+    "@fortawesome/vue-fontawesome": ^3.0.3
     "@nuxtjs/google-fonts": ^3.0.0-1
     "@nuxtjs/tailwindcss": ^6.2.0
     core-js: ^3.27.2
