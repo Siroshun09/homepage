@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3.6.0
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
 
       - name: Install dependencies
@@ -32,3 +32,12 @@ jobs:
         with:
           name: homepage-build-${{ github.run_number }}
           path: ./.output/public
+
+      - name: Deploy to GitHub Pages
+        if: ${{ github.repository == 'Siroshun09/homepage' && github.ref == 'refs/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3.9.2
+        with:
+          external_repository: Siroshun09/siroshun09.github.io
+          personal_token: ${{ secrets.TOKEN_FOR_DEPLOYING_TO_GH_PAGES }}
+          publish_dir: ./.output/public
+          allow_empty_commit: true
