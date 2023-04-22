@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.2
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.6.0
@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: ${{ github.repository == 'Siroshun09/homepage' && github.ref == 'refs/heads/master' }}
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           external_repository: Siroshun09/siroshun09.github.io
           personal_token: ${{ secrets.TOKEN_FOR_DEPLOYING_TO_GH_PAGES }}
