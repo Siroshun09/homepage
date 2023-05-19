@@ -778,7 +778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.5.0, @nuxt/kit@npm:^3.2.3, @nuxt/kit@npm:^3.3.3, @nuxt/kit@npm:^3.4.3":
+"@nuxt/kit@npm:3.5.0, @nuxt/kit@npm:^3.3.3, @nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.5.0":
   version: 3.5.0
   resolution: "@nuxt/kit@npm:3.5.0"
   dependencies:
@@ -918,14 +918,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/google-fonts@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@nuxtjs/google-fonts@npm:3.0.0"
+"@nuxtjs/google-fonts@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@nuxtjs/google-fonts@npm:3.0.1"
   dependencies:
-    "@nuxt/kit": ^3.2.3
-    google-fonts-helper: ^3.2.4
+    "@nuxt/kit": ^3.5.0
+    google-fonts-helper: ^3.3.0
     pathe: ^1.1.0
-  checksum: 6707ad56f9409fdefdae08ff1b14e03dea9045f0cbba43ebd151d3fda9a2e3032c691b5276784a1f347add33cd67d0bc635422471120cfacdc24d1cd7b87d60b
+  checksum: 8ac90e9f86aa8baf622ddd3266f58395555388b4c957095425d167b069be0fc92846e183505de7543bc4841bd773455a3fc4c7d7c0fcccb8e28e9992d94e6502
   languageName: node
   linkType: hard
 
@@ -3407,7 +3407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-fonts-helper@npm:^3.2.4":
+"google-fonts-helper@npm:^3.3.0":
   version: 3.3.0
   resolution: "google-fonts-helper@npm:3.3.0"
   dependencies:
@@ -3511,7 +3511,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.4.0
     "@fortawesome/free-solid-svg-icons": ^6.4.0
     "@fortawesome/vue-fontawesome": ^3.0.3
-    "@nuxtjs/google-fonts": ^3.0.0
+    "@nuxtjs/google-fonts": ^3.0.1
     "@nuxtjs/tailwindcss": ^6.7.0
     core-js: ^3.30.2
     nuxt: ^3.5.0
