@@ -3438,7 +3438,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -3758,7 +3758,7 @@ __metadata:
     "@nuxtjs/tailwindcss": ^6.8.0
     core-js: ^3.31.1
     nuxt: ^3.6.2
-    postcss: ^8.4.24
+    postcss: ^8.4.26
   languageName: unknown
   linkType: soft
 
@@ -6107,6 +6107,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:^8.4.26":
+  version: 8.4.26
+  resolution: "postcss@npm:8.4.26"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 1cf08ee10d58cbe98f94bf12ac49a5e5ed1588507d333d2642aacc24369ca987274e1f60ff4cbf0081f70d2ab18a5cd3a4a273f188d835b8e7f3ba381b184e57
+  languageName: node
+  linkType: hard
+
 "pretty-bytes@npm:^6.1.0":
   version: 6.1.0
   resolution: "pretty-bytes@npm:6.1.0"
@@ -6338,7 +6349,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.2#~builtin<compat/resolve>":
   version: 1.22.3
-  resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"
   dependencies:
     is-core-module: ^2.12.0
     path-parse: ^1.0.7
