@@ -31,7 +31,7 @@
 
         <ul>
           <li>Twitter: <a href="https://twitter.com/siroshun09">Siroshun09</a></li>
-          <li>Discord: <code>Siroshun09#7501</code> (id: <code>340865494406004737</code>)</li>
+          <li>Discord: <code>siroshun</code></li>
         </ul>
 
         <p>If you are using Discord, please send me a friend request first.</p>
