@@ -27,10 +27,10 @@
       <div class="contact-me" v-else>
         <h1>How to contact me?</h1>
 
-        <p>Twitter or Discord DM is the quickest way to get a response.</p>
+        <p>X (Twitter) or Discord DM is the quickest way to get a response.</p>
 
         <ul>
-          <li>Twitter: <a href="https://twitter.com/siroshun09">Siroshun09</a></li>
+          <li>X (Twitter): <a href="https://twitter.com/siroshun09">Siroshun09</a></li>
           <li>Discord: <code>siroshun</code></li>
         </ul>
 
