@@ -35,21 +35,6 @@
         </ul>
 
         <p>If you are using Discord, please send me a friend request first.</p>
-
-        <br/>
-
-        <p>Alternatively, you can contact me via email.</p>
-
-        <p>My e-mail address is <code>siroshun@pm.me</code> (<code>siroshun@protonmail.com</code>).</p>
-
-        <p>In case of email, there may be a delay in replying.</p>
-
-        <p>I'll sign the email, so you can use <!--suppress HtmlUnknownTarget -->
-          <a href="mail_pgp.asc">AE6A E203 1CBF B24C</a> to verify it.</p>
-
-        <div class="my-5">
-          <p class="profile-change text-center" @click="profile = !profile">Return to profile</p>
-        </div>
       </div>
     </div>
   </div>
