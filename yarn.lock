@@ -1168,7 +1168,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.8.2, @nuxt/kit@npm:^3.6.5, @nuxt/kit@npm:^3.7.4, @nuxt/kit@npm:^3.8.1, @nuxt/kit@npm:^3.8.2":
+"@nuxt/kit@npm:3.8.2, @nuxt/kit@npm:^3.7.4, @nuxt/kit@npm:^3.8.1, @nuxt/kit@npm:^3.8.2":
   version: 3.8.2
   resolution: "@nuxt/kit@npm:3.8.2"
   dependencies:
@@ -1306,14 +1306,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/google-fonts@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "@nuxtjs/google-fonts@npm:3.0.2"
+"@nuxtjs/google-fonts@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@nuxtjs/google-fonts@npm:3.1.0"
   dependencies:
-    "@nuxt/kit": ^3.6.5
-    google-fonts-helper: ^3.3.1
+    "@nuxt/kit": ^3.8.2
+    google-fonts-helper: ^3.4.0
     pathe: ^1.1.1
-  checksum: 69e97b23eeb929aa3991b3cbf9a19968d4d89da32df010f655a8c7d437b7112bd4cff81eb18372df8ca08e0a76235847058d9a3ceb92a191ba7967f4fb4b0ede
+  checksum: dc46aff2b313b1b6e50a5c0334f92480146f3917f117d0b593fca6741754bf5c385c112b253ad6667158e6dd3a7aa7808a4b47e819c66305b4a41078547a21b8
   languageName: node
   linkType: hard
 
@@ -3968,7 +3968,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.3#~builtin<compat/fsevents>":
   version: 2.3.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -4181,15 +4181,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-fonts-helper@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "google-fonts-helper@npm:3.3.1"
+"google-fonts-helper@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "google-fonts-helper@npm:3.4.0"
   dependencies:
     deepmerge: ^4.3.1
     hookable: ^5.5.3
-    ofetch: ^1.1.1
-    ufo: ^1.1.2
-  checksum: 0d8e7a10bf96d7034aa7f2f8cecdb1f7b7e101dbabfcd086cdd24d9aa316ace70fd51e9d13f36291aed39fba6ee05b68623597108aaefd603521aed45c1b04f4
+    ofetch: ^1.3.3
+    ufo: ^1.3.2
+  checksum: ae9d1c1dde590b5c0c208c9e27bb63682ad5997f6d701d90826557658fde1c111e6f54572486f2c93bb091030fa7ead518654baf0c0f2ef488f962c498d7a639
   languageName: node
   linkType: hard
 
@@ -4286,7 +4286,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.4.2
     "@fortawesome/free-solid-svg-icons": ^6.4.2
     "@fortawesome/vue-fontawesome": ^3.0.5
-    "@nuxtjs/google-fonts": ^3.0.2
+    "@nuxtjs/google-fonts": ^3.1.0
     "@nuxtjs/tailwindcss": ^6.10.0
     core-js: ^3.33.3
     nuxt: ^3.8.2
@@ -6008,7 +6008,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ofetch@npm:^1.1.1, ofetch@npm:^1.3.3":
+"ofetch@npm:^1.3.3":
   version: 1.3.3
   resolution: "ofetch@npm:1.3.3"
   dependencies:
@@ -7101,7 +7101,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.2#~builtin<compat/resolve>":
   version: 1.22.8
-  resolution: "resolve@patch:resolve@npm%3A1.22.8#~builtin<compat/resolve>::version=1.22.8&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.8#~builtin<compat/resolve>::version=1.22.8&hash=c3c19d"
   dependencies:
     is-core-module: ^2.13.0
     path-parse: ^1.0.7
