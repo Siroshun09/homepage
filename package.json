@@ -9,16 +9,16 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
-    "core-js": "^3.33.3",
+    "core-js": "^3.34.0",
     "nuxt": "^3.8.2"
   },
   "devDependencies": {
-    "@nuxtjs/google-fonts": "^3.0.2",
-    "@nuxtjs/tailwindcss": "^6.10.0",
-    "postcss": "^8.4.31"
+    "@nuxtjs/google-fonts": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "postcss": "^8.4.32"
   }
 }
