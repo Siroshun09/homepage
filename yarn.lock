@@ -1204,14 +1204,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/google-fonts@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@nuxtjs/google-fonts@npm:3.1.1"
+"@nuxtjs/google-fonts@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "@nuxtjs/google-fonts@npm:3.1.3"
   dependencies:
     "@nuxt/kit": ^3.8.2
     google-fonts-helper: ^3.4.1
     pathe: ^1.1.1
-  checksum: 5062a83f57d2a91bc2dacbd156145b261af38e4c52a80b5f5df17304b841f51c2ac83ff471896cafd97015489ac745babadf40e4bb0724043f232aac38de0373
+  checksum: bfd0367bfc546c6e4f127fee12cacde793f90cce7676936881ee9b0dba2c28d20d813d22db1fa9810ea203ef41045ffff3ed9967767bb421a33dc363439f65f5
   languageName: node
   linkType: hard
 
@@ -4090,7 +4090,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.5.1
     "@fortawesome/free-solid-svg-icons": ^6.5.1
     "@fortawesome/vue-fontawesome": ^3.0.5
-    "@nuxtjs/google-fonts": ^3.1.1
+    "@nuxtjs/google-fonts": ^3.1.3
     "@nuxtjs/tailwindcss": ^6.10.3
     core-js: ^3.35.0
     nuxt: ^3.9.0
