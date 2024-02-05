@@ -1536,9 +1536,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/tailwindcss@npm:^6.11.2":
-  version: 6.11.2
-  resolution: "@nuxtjs/tailwindcss@npm:6.11.2"
+"@nuxtjs/tailwindcss@npm:^6.11.3":
+  version: 6.11.3
+  resolution: "@nuxtjs/tailwindcss@npm:6.11.3"
   dependencies:
     "@nuxt/kit": ^3.9.3
     autoprefixer: ^10.4.17
@@ -1556,7 +1556,7 @@ __metadata:
     tailwind-config-viewer: ^1.7.3
     tailwindcss: ~3.4.1
     ufo: ^1.3.2
-  checksum: 46668d4b07babb32015292ec8ea535527d9718b7cc0b5bb501c4dc51a2d82183afa5049673589a32c80081689fb85ddc92ac5478cb84ebf177bef38ad10e4b02
+  checksum: 1ba6db650f1476a008ff04af504e157c7b4178fc866f3c0b8c8c38e5135e1fc5095e666e6f39683b9488075a05f8dc8e1cbf7c23a7cfc98ed68767e88912be34
   languageName: node
   linkType: hard
 
@@ -4480,7 +4480,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.5.1
     "@fortawesome/vue-fontawesome": ^3.0.6
     "@nuxtjs/google-fonts": ^3.1.3
-    "@nuxtjs/tailwindcss": ^6.11.2
+    "@nuxtjs/tailwindcss": ^6.11.3
     core-js: ^3.35.1
     nuxt: ^3.10.0
     postcss: ^8.4.33
