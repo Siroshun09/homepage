@@ -1267,7 +1267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.10.3":
+"@nuxt/kit@npm:3.10.3, @nuxt/kit@npm:^3.10.3":
   version: 3.10.3
   resolution: "@nuxt/kit@npm:3.10.3"
   dependencies:
@@ -1525,14 +1525,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/google-fonts@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "@nuxtjs/google-fonts@npm:3.1.3"
+"@nuxtjs/google-fonts@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@nuxtjs/google-fonts@npm:3.2.0"
   dependencies:
-    "@nuxt/kit": ^3.8.2
-    google-fonts-helper: ^3.4.1
-    pathe: ^1.1.1
-  checksum: bfd0367bfc546c6e4f127fee12cacde793f90cce7676936881ee9b0dba2c28d20d813d22db1fa9810ea203ef41045ffff3ed9967767bb421a33dc363439f65f5
+    "@nuxt/kit": ^3.10.3
+    google-fonts-helper: ^3.5.0
+    pathe: ^1.1.2
+  checksum: a404ab92b88d3d1c19c54a791fadfb4d4d7e0c43b70345bfa4ff453e1dcce34e5488129c466ea3e6b8d18eafcb1c742239fc7ab6689b790200da98bf88ed3da1
   languageName: node
   linkType: hard
 
@@ -4414,15 +4414,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-fonts-helper@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "google-fonts-helper@npm:3.4.1"
+"google-fonts-helper@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "google-fonts-helper@npm:3.5.0"
   dependencies:
     deepmerge: ^4.3.1
     hookable: ^5.5.3
     ofetch: ^1.3.3
-    ufo: ^1.3.2
-  checksum: ba28b7835ee0d3982d9195e0d8ca9a724cbca2ec689f1fc8937f188ec2b2ba1060fcc1d448534a08e99977b01c6fed9f0d9b45071318a6e5d240655ab983aa81
+    ufo: ^1.4.0
+  checksum: d93e916487f6ecf1549e3092d148b7ef5defac76bba8544d803b9e43a0f619e08cabd617aa16d909af5d8fa99ddfa7925c280d2395ab81e03d65c093b7c8b9b8
   languageName: node
   linkType: hard
 
@@ -4552,7 +4552,7 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.5.1
     "@fortawesome/free-solid-svg-icons": ^6.5.1
     "@fortawesome/vue-fontawesome": ^3.0.6
-    "@nuxtjs/google-fonts": ^3.1.3
+    "@nuxtjs/google-fonts": ^3.2.0
     "@nuxtjs/tailwindcss": ^6.11.4
     core-js: ^3.36.0
     nuxt: ^3.10.3
