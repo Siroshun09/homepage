@@ -13,8 +13,8 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
-    "core-js": "^3.36.0",
-    "nuxt": "^3.11.0"
+    "core-js": "^3.36.1",
+    "nuxt": "^3.11.1"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
