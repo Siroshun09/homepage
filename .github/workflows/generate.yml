@@ -27,7 +27,7 @@ jobs:
         run: yarn generate
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4.3.2
+        uses: actions/upload-artifact@v4.3.3
         continue-on-error: true
         with:
           name: homepage-build-${{ github.run_number }}
