@@ -2,6 +2,8 @@
   "name": "homepage",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.1.1",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
