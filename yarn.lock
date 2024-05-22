@@ -657,13 +657,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/vue-fontawesome@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "@fortawesome/vue-fontawesome@npm:3.0.6"
+"@fortawesome/vue-fontawesome@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@fortawesome/vue-fontawesome@npm:3.0.8"
   peerDependencies:
     "@fortawesome/fontawesome-svg-core": ~1 || ~6
     vue: ">= 3.0.0 < 4"
-  checksum: 10c0/58f49ecde955fd0435d4fbbf7ae3c32038f0a1dac8e21d71ec6c1c7cf8b3e12b261c25ed2906cd97cda39fa969fec87ea1cf71d18d30d879ad369491443cafad
+  checksum: 10c0/a123db06deceb3b7304a94081262946f8da64884a6aac55ea3691ef7fe803692b3af933e772b04cdaad4f2c41473594122cc516a3078f861d413452ce6cb1d86
   languageName: node
   linkType: hard
 
@@ -2987,10 +2987,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.37.0":
-  version: 3.37.0
-  resolution: "core-js@npm:3.37.0"
-  checksum: 10c0/7e00331f346318ca3f595c08ce9e74ddae744715aef137486c1399163afd79792fb94c3161280863adfdc3e30f8026912d56bd3036f93cacfc689d33e185f2ee
+"core-js@npm:^3.37.1":
+  version: 3.37.1
+  resolution: "core-js@npm:3.37.1"
+  checksum: 10c0/440eb51a7a39128a320225fe349f870a3641b96c9ecd26470227db730ef8c161ea298eaea621db66ec0ff622a85299efb4e23afebf889c0a1748616102307675
   languageName: node
   linkType: hard
 
@@ -4186,10 +4186,10 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.2"
     "@fortawesome/free-brands-svg-icons": "npm:^6.5.2"
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
-    "@fortawesome/vue-fontawesome": "npm:^3.0.6"
+    "@fortawesome/vue-fontawesome": "npm:^3.0.8"
     "@nuxtjs/google-fonts": "npm:^3.2.0"
     "@nuxtjs/tailwindcss": "npm:^6.12.0"
-    core-js: "npm:^3.37.0"
+    core-js: "npm:^3.37.1"
     nuxt: "npm:^3.11.2"
     postcss: "npm:^8.4.38"
   languageName: unknown
