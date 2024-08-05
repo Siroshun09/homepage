@@ -15,12 +15,12 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
-    "core-js": "^3.37.1",
+    "core-js": "^3.38.0",
     "nuxt": "^3.12.4"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "postcss": "^8.4.39"
+    "postcss": "^8.4.40"
   }
 }
