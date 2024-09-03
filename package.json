@@ -21,6 +21,6 @@
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "postcss": "^8.4.41"
+    "postcss": "^8.4.44"
   }
 }
