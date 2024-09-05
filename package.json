@@ -16,11 +16,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "core-js": "^3.38.1",
-    "nuxt": "^3.13.0"
+    "nuxt": "^3.13.1"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "postcss": "^8.4.41"
+    "postcss": "^8.4.45"
   }
 }
