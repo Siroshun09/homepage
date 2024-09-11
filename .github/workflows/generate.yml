@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - run: corepack enable
       - name: Setup Node.js
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           node-version: '20'
           cache: 'yarn'
@@ -27,7 +27,7 @@ jobs:
         run: yarn generate
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
         continue-on-error: true
         with:
           name: homepage-build-${{ github.run_number }}
@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: ${{ github.repository == 'Siroshun09/homepage' && github.ref == 'refs/heads/master' }}
-        uses: peaceiris/actions-gh-pages@v4.0.0
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
           external_repository: Siroshun09/siroshun09.github.io
           personal_token: ${{ secrets.TOKEN_FOR_DEPLOYING_TO_GH_PAGES }}
