@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-const error = useError()
+const error = useError();
 </script>
 
 <style scoped>

@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-let profile = ref(true);
+const profile = ref(true);
 </script>
 
 <style scoped>
