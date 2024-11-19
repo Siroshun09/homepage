@@ -30,7 +30,7 @@
         <p>X (Twitter) or Discord DM is the quickest way to get a response.</p>
 
         <ul>
-          <li>X (Twitter): <a href="https://twitter.com/siroshun09">Siroshun09</a></li>
+          <li>X (Twitter): <a href="https://x.com/siroshun09">Siroshun09</a></li>
           <li>Discord: <code>siroshun</code></li>
         </ul>
 
