@@ -18,11 +18,11 @@
             </button>
           </a>
         </div>
-        <small>If you want to contact me, please
+        <small>
+          If you want to contact me, please
           <span class="profile-change" @click="profile = !profile">click here</span>
-          for more information.</small>
-        <br/>
-        <small>© 2021-2024 Siroshun</small>
+          for more information.
+        </small>
       </div>
       <div class="contact-me" v-else>
         <h1>How to contact me?</h1>
@@ -35,6 +35,15 @@
         </ul>
 
         <p>If you are using Discord, please send me a friend request first.</p>
+        <hr class="my-2">
+        <div class="text-center">
+          <small>
+            <span class="profile-change" @click="profile = !profile">Click here</span> to back to profile card
+          </small>
+        </div>
+      </div>
+      <div class="text-center">
+        <small>© 2021-2024 Siroshun</small>
       </div>
     </div>
   </div>
