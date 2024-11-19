@@ -74,7 +74,7 @@ const profile = ref(true);
 }
 
 .contact-me h1 {
-  @apply text-4xl my-3 mx-auto px-1 py-2 text-gray-500 border-b border-gray-300 tracking-wider
+  @apply text-4xl mt-3 mb-5 mx-auto px-1 py-2 text-gray-500 border-b border-gray-300 tracking-wider
 }
 
 .contact-me p {
@@ -84,6 +84,10 @@ const profile = ref(true);
 .contact-me ul {
   font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   @apply text-lg my-3
+}
+
+.contact-me hr {
+  @apply my-3
 }
 
 .icon {
