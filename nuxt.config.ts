@@ -1,10 +1,9 @@
 import type { NuxtConfig } from "@nuxt/types";
 
+// https://nuxt.com/docs/api/nuxt-config
 const nuxtConfig: NuxtConfig = {
-	// Target: https://go.nuxtjs.dev/config-target
 	target: "static",
 
-	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
 		title: "homepage",
 		htmlAttrs: {
@@ -124,24 +123,17 @@ const nuxtConfig: NuxtConfig = {
 		],
 	},
 
-	// Global CSS (https://go.nuxtjs.dev/config-css)
 	css: ["@fortawesome/fontawesome-svg-core/styles.css"],
 
-	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 	plugins: ["@/plugins/fontawesome.ts"],
 
-	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: false,
 
-	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	modules: [
-		// https://go.nuxtjs.dev/tailwindcss
 		"@nuxtjs/tailwindcss",
-		// https://google-fonts.nuxtjs.org
 		"@nuxtjs/google-fonts",
 	],
 
-	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 		transpile: ["@fortawesome/vue-fontawesome"],
 		postcss: {
