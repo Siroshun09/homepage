@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="text-center">
-        <small>© 2021-2024 Siroshun</small>
+        <small>© 2021-2025 Siroshun</small>
       </div>
     </div>
   </div>
