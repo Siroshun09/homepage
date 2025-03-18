@@ -129,10 +129,7 @@ const nuxtConfig: NuxtConfig = {
 
 	components: false,
 
-	modules: [
-		"@nuxtjs/tailwindcss",
-		"@nuxtjs/google-fonts",
-	],
+	modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
 
 	build: {
 		transpile: ["@fortawesome/vue-fontawesome"],

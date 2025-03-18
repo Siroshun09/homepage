@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"type": "module",
-	"packageManager": "yarn@4.7.0",
+	"packageManager": "pnpm@10.6.4",
 	"scripts": {
 		"dev": "nuxt dev",
 		"build": "nuxt build",
@@ -27,5 +27,13 @@
 		"@nuxtjs/google-fonts": "^3.2.0",
 		"@nuxtjs/tailwindcss": "^6.12.1",
 		"postcss": "^8.4.45"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@biomejs/biome",
+			"@parcel/watcher",
+			"core-js",
+			"esbuild"
+		]
 	}
 }
