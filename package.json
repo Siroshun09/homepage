@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"type": "module",
-	"packageManager": "pnpm@10.6.4",
+	"packageManager": "pnpm@10.6.5",
 	"scripts": {
 		"dev": "nuxt dev",
 		"build": "nuxt build",
