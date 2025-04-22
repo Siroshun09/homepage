@@ -1,29 +1,24 @@
-### yarn ###
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-### Nuxt ###
-.nuxt
-dist
-.output
-assets/fonts
-assets/css/fonts.css
-
-### Nuxtjs ###
 node_modules
-npm-debug.log
+dist
+dist-ssr
+*.local
 
-### VisualStudioCode ###
-.history
-.ionide
+# Editor directories and files
 .vscode/*
-*.code-workspace
-
-### IntelliJ and WebStorm ###
-out/
-*.iml
+!.vscode/extensions.json
 .idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
