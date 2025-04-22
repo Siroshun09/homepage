@@ -30,7 +30,7 @@ jobs:
         continue-on-error: true
         with:
           name: homepage-build-${{ github.run_number }}
-          path: ./.output/public
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         if: ${{ github.repository == 'Siroshun09/homepage' && github.ref == 'refs/heads/master' }}
@@ -38,5 +38,5 @@ jobs:
         with:
           external_repository: Siroshun09/siroshun09.github.io
           personal_token: ${{ secrets.TOKEN_FOR_DEPLOYING_TO_GH_PAGES }}
-          publish_dir: ./.output/public
+          publish_dir: ./dist
           allow_empty_commit: true

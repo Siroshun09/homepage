@@ -1,39 +1,32 @@
 {
 	"name": "homepage",
-	"version": "1.0.0",
 	"private": true,
+	"version": "1.0.0",
 	"type": "module",
 	"packageManager": "pnpm@10.9.0",
 	"scripts": {
-		"dev": "nuxt dev",
-		"build": "nuxt build",
-		"start": "nuxt start",
-		"generate": "nuxt generate",
-		"check": "biome check ./",
-		"fix": "biome check --write ./"
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"generate": "vite build",
+		"check": "pnpm biome check ./",
+		"fix": "pnpm biome check --write ./"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^6.6.0",
-		"@fortawesome/free-brands-svg-icons": "^6.6.0",
-		"@fortawesome/free-solid-svg-icons": "^6.6.0",
-		"@fortawesome/vue-fontawesome": "^3.0.8",
-		"core-js": "^3.38.1",
-		"nuxt": "^3.15.2"
+		"@fortawesome/fontawesome-svg-core": "^6.7.2",
+		"@fortawesome/free-brands-svg-icons": "^6.7.2",
+		"@fortawesome/react-fontawesome": "^0.2.2",
+		"@tailwindcss/vite": "^4.1.4",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"tailwindcss": "^4.1.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@nuxt/types": "^2.18.1",
-		"@nuxt/typescript-build": "^3.0.2",
-		"@nuxtjs/google-fonts": "^3.2.0",
-		"@nuxtjs/tailwindcss": "^6.12.1",
-		"postcss": "^8.4.45"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"@biomejs/biome",
-			"@parcel/watcher",
-			"core-js",
-			"esbuild"
-		]
+		"@biomejs/biome": "^1.9.4",
+		"@types/react": "^19.1.2",
+		"@types/react-dom": "^19.1.2",
+		"@vitejs/plugin-react-swc": "^3.9.0",
+		"globals": "^16.0.0",
+		"typescript": "~5.7.3",
+		"vite": "^6.3.2"
 	}
 }
