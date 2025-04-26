@@ -26,11 +26,11 @@ export const Profile = (props: Props) => {
 
 			<RubikFont>
 				<p className="text-xl text-gray-900 my-1">
-					Hello, I am a Japanese university student.
+					Hello, I am a Software Developer from Japan.
 				</p>
-				<p className="text-xl text-gray-900 my-1">
-					I love Ayataka, programming, and Minecraft!
-				</p>
+        <p className="text-xl text-gray-900 my-1">
+          I develop various software mainly in Java and Go.
+        </p>
 				<div className="flex my-10 text-5xl justify-center">
 					<a
 						href="https://twitter.com/siroshun09"
