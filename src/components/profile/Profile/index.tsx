@@ -28,9 +28,9 @@ export const Profile = (props: Props) => {
 				<p className="text-xl text-gray-900 my-1">
 					Hello, I am a Software Developer from Japan.
 				</p>
-        <p className="text-xl text-gray-900 my-1">
-          I develop various software mainly in Java and Go.
-        </p>
+				<p className="text-xl text-gray-900 my-1">
+					I develop various software mainly in Java and Go.
+				</p>
 				<div className="flex my-10 text-5xl justify-center">
 					<a
 						href="https://twitter.com/siroshun09"
