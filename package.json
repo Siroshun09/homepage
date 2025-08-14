@@ -15,13 +15,13 @@
 		"@fortawesome/fontawesome-svg-core": "7.0.0",
 		"@fortawesome/free-brands-svg-icons": "7.0.0",
 		"@fortawesome/react-fontawesome": "0.2.3",
-		"@tailwindcss/vite": "4.1.11",
+		"@tailwindcss/vite": "4.1.12",
 		"react": "19.1.1",
 		"react-dom": "19.1.1",
-		"tailwindcss": "4.1.11"
+		"tailwindcss": "4.1.12"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.1.4",
+		"@biomejs/biome": "2.2.0",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"@vitejs/plugin-react-swc": "^4.0.0",
