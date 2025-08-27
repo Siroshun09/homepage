@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "7.0.0",
 		"@fortawesome/free-brands-svg-icons": "7.0.0",
-		"@fortawesome/react-fontawesome": "3.0.0",
+		"@fortawesome/react-fontawesome": "3.0.1",
 		"@tailwindcss/vite": "4.1.12",
 		"react": "19.1.1",
 		"react-dom": "19.1.1",
@@ -22,8 +22,8 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.2",
-		"@types/react": "19.1.11",
-		"@types/react-dom": "19.1.7",
+		"@types/react": "19.1.12",
+		"@types/react-dom": "19.1.8",
 		"@vitejs/plugin-react-swc": "4.0.1",
 		"globals": "16.3.0",
 		"typescript": "5.9.2",
