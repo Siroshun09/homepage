@@ -21,11 +21,11 @@
 		"tailwindcss": "4.1.13"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.3",
+		"@biomejs/biome": "2.2.4",
 		"@types/react": "19.1.12",
 		"@types/react-dom": "19.1.9",
 		"@vitejs/plugin-react-swc": "4.0.1",
-		"globals": "16.3.0",
+		"globals": "16.4.0",
 		"typescript": "5.9.2",
 		"vite": "7.1.4"
 	}
