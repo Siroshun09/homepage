@@ -1,37 +1,7 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
-    'config:recommended',
-    'helpers:pinGitHubActionDigests',
-  ],
-  packageRules: [
-    {
-      groupName: 'all non-major dependencies for gh-actions',
-      groupSlug: 'gha-all-minor-patch',
-      matchManagers: [
-        'github-actions',
-      ],
-      matchUpdateTypes: [
-        'minor',
-        'patch',
-      ],
-      matchPackageNames: [
-        '*',
-      ],
-    },
-    {
-      groupName: 'all non-major dependencies for npm',
-      groupSlug: 'npm-all-minor-patch',
-      matchManagers: [
-        'npm',
-      ],
-      matchUpdateTypes: [
-        'minor',
-        'patch',
-      ],
-      matchPackageNames: [
-        '*',
-      ],
-    },
-  ],
+    'github>Siroshun09/renovate-config//github-actions/renovate.json5',
+    'github>Siroshun09/renovate-config//npm/renovate.json5'
+  ]
 }
