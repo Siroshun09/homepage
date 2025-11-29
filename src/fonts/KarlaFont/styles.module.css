@@ -1,12 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Rubik:wght@600&display=swap");
-
 .karlaFont {
-	* {
-		font-family:
-			"Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-			"Helvetica Neue", Arial, sans-serif;
-		font-optical-sizing: auto;
-		font-weight: 600;
-		font-style: normal;
-	}
+	font-family:
+		"Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
 }

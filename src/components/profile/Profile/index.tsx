@@ -4,7 +4,7 @@ import { GitHubIcon, TwitterIcon } from "../../icons";
 import Icon from "./icon.jpg";
 
 export type Props = {
-	onClickContactLink: () => void;
+	onClickContactLink?: () => void;
 };
 
 export const Profile = (props: Props) => {
@@ -14,6 +14,10 @@ export const Profile = (props: Props) => {
 				src={Icon}
 				alt="Siroshun's Icon"
 				class="w-48 h-48 rounded-full mx-auto my-5"
+				decoding="async"
+				fetchpriority="high"
+				width={192}
+				height={192}
 			/>
 
 			<KarlaFont>
@@ -59,7 +63,7 @@ export const Profile = (props: Props) => {
 					If you want to contact me, please{" "}
 					<button
 						class="text-blue-500 hover:text-blue-700 cursor-pointer"
-						onClick={() => props.onClickContactLink()}
+						onClick={() => props.onClickContactLink?.()}
 						type="button"
 					>
 						click here

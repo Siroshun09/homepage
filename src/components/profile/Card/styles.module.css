@@ -3,6 +3,7 @@
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 	opacity: 0;
+	will-change: transform, opacity;
 }
 
 @keyframes fadeUpAnime {
