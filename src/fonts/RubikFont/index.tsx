@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
+import type { ParentProps } from "solid-js";
 import styles from "./styles.module.css";
 
-export const RubikFont = (props: { children: ReactNode }) => {
-	return <div className={`${styles.rubikFont}`}>{props.children}</div>;
+export const RubikFont = (props: ParentProps) => {
+	return <div class={`${styles.rubikFont}`}>{props.children}</div>;
 };
