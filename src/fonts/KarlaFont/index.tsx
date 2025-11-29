@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
+import type { ParentProps } from "solid-js";
 import styles from "./styles.module.css";
 
-export const KarlaFont = (props: { children: ReactNode }) => {
-	return <div className={`${styles.karlaFont}`}>{props.children}</div>;
+export const KarlaFont = (props: ParentProps) => {
+	return <div class={`${styles.karlaFont}`}>{props.children}</div>;
 };
