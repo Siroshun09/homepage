@@ -45,7 +45,7 @@ export const Contact = (props: Props) => {
 
 				<p class="text-center text-base">
 					<button
-						class="text-blue-400 hover:text-blue-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+						class="text-blue-400 hover:text-blue-700 cursor-pointer"
 						onClick={props.onClickBack}
 						type="button"
 					>
