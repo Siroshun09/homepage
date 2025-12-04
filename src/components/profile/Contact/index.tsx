@@ -7,7 +7,7 @@ export type Props = {
 
 export const Contact = (props: Props) => {
 	return (
-		<div>
+		<>
 			<KarlaFont>
 				<h1 class="text-4xl mt-3 mb-5 mx-auto px-1 py-2 text-gray-500 border-b border-gray-300 tracking-wider">
 					How to contact me?
@@ -43,19 +43,16 @@ export const Contact = (props: Props) => {
 
 				<hr class="my-3 text-gray-200" />
 
-				<div class="text-center">
-					<small class="text-base">
-						<button
-							class="text-blue-500 hover:text-blue-700 cursor-pointer"
-							onClick={props.onClickBack}
-							type="button"
-						>
-							Click here
-						</button>{" "}
-						to back to profile card
-					</small>
-				</div>
+				<p class="text-center text-base">
+					<button
+						class="text-blue-400 hover:text-blue-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+						onClick={props.onClickBack}
+						type="button"
+					>
+						Back to profile
+					</button>
+				</p>
 			</RubikFont>
-		</div>
+		</>
 	);
 };

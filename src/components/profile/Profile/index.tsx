@@ -9,7 +9,7 @@ export type Props = {
 
 export const Profile = (props: Props) => {
 	return (
-		<div class="text-center">
+		<>
 			<img
 				src={Icon}
 				alt="Siroshun's Icon"
@@ -21,24 +21,24 @@ export const Profile = (props: Props) => {
 			/>
 
 			<KarlaFont>
-				<h1 class="text-5xl my-5 mx-auto px-10 py-1 text-gray-500 border-b border-gray-300 tracking-wider">
+				<h1 class="text-center text-5xl my-5 mx-auto px-10 py-1 text-gray-500 border-b border-gray-300 tracking-wider">
 					Siroshun
 				</h1>
 			</KarlaFont>
 
 			<RubikFont>
-				<p class="text-xl text-gray-900 my-1">
-					Hello, I am a Software Developer from Japan.
-				</p>
-				<p class="text-xl text-gray-900 my-1">
-					I develop various software mainly in Java and Go.
-				</p>
+				<div class="text-center text-xl text-gray-900">
+					<p>Hello, I am a Software Developer from Japan.</p>
+					<p>I develop various software mainly in Java and Go.</p>
+				</div>
+
 				<div class="flex my-10 text-5xl justify-center">
 					<a
 						href="https://twitter.com/siroshun09"
 						target="_blank"
 						rel="noreferrer noopener"
-						class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer"
+						class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+						aria-label="Twitter: @siroshun09 (opens in a new tab)"
 					>
 						<TwitterIcon height="1em" width="1em" />
 					</a>
@@ -46,23 +46,25 @@ export const Profile = (props: Props) => {
 						href="https://github.com/Siroshun09"
 						target="_blank"
 						rel="noreferrer noopener"
-						class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer"
+						class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+						aria-label="GitHub: Siroshun09 (opens in a new tab)"
 					>
 						<GitHubIcon height="1em" width="1em" />
 					</a>
 				</div>
-				<small class="text-base">
-					If you want to contact me, please{" "}
+
+				<hr class="my-3 text-gray-200" />
+
+				<p class="text-center text-base">
 					<button
-						class="text-blue-500 hover:text-blue-700 cursor-pointer"
+						class="text-blue-400 hover:text-blue-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
 						onClick={() => props.onClickContactLink?.()}
 						type="button"
 					>
-						click here
-					</button>{" "}
-					for more information.
-				</small>
+						Contact
+					</button>
+				</p>
 			</RubikFont>
-		</div>
+		</>
 	);
 };
