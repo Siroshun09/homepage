@@ -38,25 +38,17 @@ export const Profile = (props: Props) => {
 						href="https://twitter.com/siroshun09"
 						target="_blank"
 						rel="noreferrer noopener"
+						class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer"
 					>
-						<button
-							class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer"
-							type="button"
-						>
-							<TwitterIcon height="1em" width="1em" />
-						</button>
+						<TwitterIcon height="1em" width="1em" />
 					</a>
 					<a
 						href="https://github.com/Siroshun09"
 						target="_blank"
 						rel="noreferrer noopener"
+						class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer"
 					>
-						<button
-							class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer"
-							type="button"
-						>
-							<GitHubIcon height="1em" width="1em" />
-						</button>
+						<GitHubIcon height="1em" width="1em" />
 					</a>
 				</div>
 				<small class="text-base">
