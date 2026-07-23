@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "1.0.0",
 	"type": "module",
-	"packageManager": "pnpm@11.11.0",
+	"packageManager": "pnpm@11.13.1",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc --noEmit && vite build",
@@ -17,10 +17,10 @@
 		"tailwindcss": "4.3.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.3",
+		"@biomejs/biome": "2.5.4",
 		"@types/node": "25.9.5",
 		"typescript": "7.0.2",
-		"vite": "8.1.4",
+		"vite": "8.1.5",
 		"vite-plugin-solid": "2.11.12"
 	}
 }
