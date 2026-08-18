@@ -8,6 +8,7 @@
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"generate": "vite build",
+    "typecheck": "tsc -b",
     "format": "oxfmt src/",
     "format:check": "oxfmt --check src/",
     "lint": "oxlint src/"
