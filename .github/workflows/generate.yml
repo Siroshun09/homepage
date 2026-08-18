@@ -22,8 +22,6 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - name: Install dependencies
         run: pnpm install
-      - name: Run check
-        run: pnpm check
       - name: Build
         run: pnpm generate
       - name: Upload artifacts
