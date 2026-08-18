@@ -9,8 +9,10 @@
 		"build": "tsc --noEmit && vite build",
 		"generate": "vite build",
 		"check": "pnpm biome check ./",
-		"fix": "pnpm biome check --write ./"
-	},
+		"fix": "pnpm biome check --write ./",
+    "format": "oxfmt src/",
+    "format:check": "oxfmt --check src/"
+  },
 	"dependencies": {
 		"@tailwindcss/vite": "4.3.3",
 		"solid-js": "1.9.14",
@@ -19,6 +21,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.5.7",
 		"@types/node": "25.9.5",
+    "oxfmt": "0.63.0",
 		"typescript": "7.0.2",
 		"vite": "8.2.1",
 		"vite-plugin-solid": "2.11.14"

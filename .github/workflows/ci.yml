@@ -15,5 +15,6 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - parallel:
+          - run: pnpm format:check
           - run: pnpm check
           - run: pnpm build
