@@ -1,29 +1,30 @@
 {
-	"name": "homepage",
-	"private": true,
-	"version": "1.0.0",
-	"type": "module",
-	"packageManager": "pnpm@11.21.0",
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc -b && vite build",
-		"generate": "vite build",
+  "name": "homepage",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@11.21.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "generate": "vite build",
     "typecheck": "tsc -b",
-    "format": "oxfmt src/",
-    "format:check": "oxfmt --check src/",
-    "lint": "oxlint src/"
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:ci": "oxlint --deny-warnings"
   },
-	"dependencies": {
-		"@tailwindcss/vite": "4.3.3",
-		"solid-js": "1.9.14",
-		"tailwindcss": "4.3.3"
-	},
-	"devDependencies": {
-		"@types/node": "25.9.5",
+  "dependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "solid-js": "1.9.14",
+    "tailwindcss": "4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "25.9.5",
     "oxfmt": "0.63.0",
     "oxlint": "1.78.0",
-		"typescript": "7.0.2",
-		"vite": "8.2.1",
-		"vite-plugin-solid": "2.11.14"
-	}
+    "typescript": "7.0.2",
+    "vite": "8.2.1",
+    "vite-plugin-solid": "2.11.14"
+  }
 }
