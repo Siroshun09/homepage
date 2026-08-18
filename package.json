@@ -1,9 +1,8 @@
 {
   "name": "homepage",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -26,5 +25,6 @@
     "typescript": "7.0.2",
     "vite": "8.2.1",
     "vite-plugin-solid": "2.11.14"
-  }
+  },
+  "packageManager": "pnpm@11.21.0"
 }

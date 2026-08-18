@@ -1,8 +1,8 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    'github>Siroshun09/renovate-config//github-actions/renovate.json5',
-    'github>Siroshun09/renovate-config//mise/renovate.json5',
-    'github>Siroshun09/renovate-config//npm/renovate.json5'
-  ]
+    "github>Siroshun09/renovate-config//github-actions/renovate.json5",
+    "github>Siroshun09/renovate-config//mise/renovate.json5",
+    "github>Siroshun09/renovate-config//npm/renovate.json5",
+  ],
 }

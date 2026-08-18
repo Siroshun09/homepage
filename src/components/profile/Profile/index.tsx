@@ -13,7 +13,7 @@ export const Profile = (props: Props) => {
       <img
         src={Icon}
         alt="Siroshun's Icon"
-        class="w-48 h-48 rounded-full mx-auto my-5"
+        class="mx-auto my-5 h-48 w-48 rounded-full"
         decoding="async"
         fetchpriority="high"
         width={192}
@@ -21,7 +21,7 @@ export const Profile = (props: Props) => {
       />
 
       <KarlaFont>
-        <h1 class="text-center text-5xl my-5 mx-auto px-10 py-1 text-gray-500 border-b border-gray-300 tracking-wider">
+        <h1 class="mx-auto my-5 border-b border-gray-300 px-10 py-1 text-center text-5xl tracking-wider text-gray-500">
           Siroshun
         </h1>
       </KarlaFont>
@@ -32,12 +32,12 @@ export const Profile = (props: Props) => {
           <p>I develop various software mainly in Java and Go.</p>
         </div>
 
-        <div class="flex my-10 text-5xl justify-center">
+        <div class="my-10 flex justify-center text-5xl">
           <a
             href="https://twitter.com/siroshun09"
             target="_blank"
             rel="noreferrer noopener"
-            class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+            class="cursor-pointer px-5 text-blue-300 hover:text-blue-400 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
             aria-label="Twitter: @siroshun09 (opens in a new tab)"
           >
             <TwitterIcon height="1em" width="1em" />
@@ -46,7 +46,7 @@ export const Profile = (props: Props) => {
             href="https://github.com/Siroshun09"
             target="_blank"
             rel="noreferrer noopener"
-            class="px-5 text-blue-300 hover:text-blue-400 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+            class="cursor-pointer px-5 text-blue-300 hover:text-blue-400 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
             aria-label="GitHub: Siroshun09 (opens in a new tab)"
           >
             <GitHubIcon height="1em" width="1em" />
@@ -57,7 +57,7 @@ export const Profile = (props: Props) => {
 
         <p class="text-center text-base">
           <button
-            class="text-blue-400 hover:text-blue-700 cursor-pointer"
+            class="cursor-pointer text-blue-400 hover:text-blue-700"
             onClick={() => props.onClickContactLink?.()}
             type="button"
           >
