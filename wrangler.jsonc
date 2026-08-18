@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "homepage",
+  "compatibility_date": "2026-05-25",
+  "preview_urls": false,
+  "pages_build_output_dir": "dist"
+}

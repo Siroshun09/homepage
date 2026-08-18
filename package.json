@@ -24,7 +24,8 @@
     "oxlint": "1.78.0",
     "typescript": "7.0.2",
     "vite": "8.2.1",
-    "vite-plugin-solid": "2.11.14"
+    "vite-plugin-solid": "2.11.14",
+    "wrangler": "4.123.0"
   },
   "packageManager": "pnpm@11.21.0"
 }
