@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    environment: production
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: jdx/mise-action@7e36c90d9ab29c415a2384db3006f3ec8a8cc654 # v4.2.4
+        with:
+          install_args: node pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run generate
+
+      - name: Deploy to Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: pnpm wrangler deploy
+
+      - name: Tag
+        run: |
+          TAG="production/$(git rev-parse --short HEAD)"
+          git tag "$TAG"
+          git push origin "$TAG" || echo "Tag $TAG already exists, skipping"
