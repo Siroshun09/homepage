@@ -1,4 +1,5 @@
 import { render } from "solid-js/web";
+
 import "./index.css";
 import { ProfilePage } from "./pages/Profile";
 

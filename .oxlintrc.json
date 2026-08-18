@@ -1,13 +1,12 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "typescript",
-    "unicorn",
-    "oxc"
-  ],
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "jsx-a11y"],
   "categories": {
     "correctness": "error",
     "suspicious": "warn"
+  },
+  "options": {
+    "reportUnusedDisableDirectives": "error"
   },
   "rules": {
     "no-unused-vars": "off"
