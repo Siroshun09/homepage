@@ -3,5 +3,5 @@
   "name": "homepage",
   "compatibility_date": "2026-05-25",
   "preview_urls": false,
-  "pages_build_output_dir": "dist"
+  "pages_build_output_dir": "dist",
 }
