@@ -57,6 +57,14 @@ jobs:
           name: homepage-build-${{ github.run_number }}
           path: dist
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          external_repository: Siroshun09/siroshun09.github.io
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          publish_dir: ./dist
+          allow_empty_commit: true
+
       - name: Deploy to Cloudflare
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
