@@ -27,5 +27,5 @@
     "vite-plugin-solid": "2.11.14",
     "wrangler": "4.128.0"
   },
-  "packageManager": "pnpm@12.2.1"
+  "packageManager": "pnpm@12.3.1"
 }
