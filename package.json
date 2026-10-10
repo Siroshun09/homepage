@@ -19,13 +19,13 @@
     "tailwindcss": "4.3.3"
   },
   "devDependencies": {
-    "@types/node": "25.9.8",
+    "@types/node": "25.9.9",
     "oxfmt": "0.71.0",
     "oxlint": "1.86.0",
     "typescript": "7.0.2",
-    "vite": "8.3.1",
+    "vite": "8.3.2",
     "vite-plugin-solid": "2.11.14",
-    "wrangler": "4.143.0"
+    "wrangler": "4.147.0"
   },
-  "packageManager": "pnpm@12.8.1"
+  "packageManager": "pnpm@12.9.0"
 }
