@@ -1,6 +1,12 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   ci:
@@ -8,13 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: jdx/mise-action@7a4e45a543138629540c9a1616d08632b893e492 # v5.0.1
+      - uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
         with:
-          install_args: node pnpm
-
-      - run: pnpm install --frozen-lockfile
+          cache: true
+          require-lockfile: true
 
       - parallel:
-          - run: pnpm typecheck
+          - run: pnpm build
           - run: pnpm format:check
           - run: pnpm lint:ci
