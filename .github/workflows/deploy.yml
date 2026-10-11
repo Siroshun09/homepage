@@ -69,10 +69,8 @@ jobs:
       - name: Deploy to Cloudflare Pages (production)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing production API token}"
-          : "${CLOUDFLARE_ACCOUNT_ID:?Missing Cloudflare account ID}"
           pnpm wrangler pages deploy dist \
             --branch=main \
             --commit-hash="$GITHUB_SHA"
@@ -111,10 +109,8 @@ jobs:
       - name: Deploy to Cloudflare Pages (preview)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PREVIEW_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing preview API token}"
-          : "${CLOUDFLARE_ACCOUNT_ID:?Missing Cloudflare account ID}"
           # Always use a non-production branch, including preview runs from main.
           pnpm wrangler pages deploy dist \
             --branch="preview/$GITHUB_REF_NAME" \
