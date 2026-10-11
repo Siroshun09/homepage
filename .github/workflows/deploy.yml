@@ -125,4 +125,3 @@ jobs:
             --project-name="$CLOUDFLARE_PROJECT_NAME" \
             --branch="preview/$GITHUB_REF_NAME" \
             --commit-hash="$GITHUB_SHA"
-
