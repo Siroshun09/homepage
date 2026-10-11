@@ -2,8 +2,7 @@ import fonts from "../../../fonts/styles.module.css";
 import { GitHubIcon, TwitterIcon } from "../../icons";
 import Icon from "./icon.jpg";
 
-const socialLinkClass =
-  "cursor-pointer px-5 text-blue-300 hover:text-blue-400 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none";
+const socialLinkClass = "cursor-pointer px-5 text-blue-300 hover:text-blue-400 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none";
 
 export type Props = {
   onClickContactLink: () => void;
