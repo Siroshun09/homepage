@@ -69,14 +69,11 @@ jobs:
       - name: Deploy to Cloudflare Pages (production)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_PRODUCTION_ACCOUNT_ID }}
-          CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PRODUCTION_PROJECT_NAME }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing production API token}"
-          : "${CLOUDFLARE_ACCOUNT_ID:?Missing production account ID}"
-          : "${CLOUDFLARE_PROJECT_NAME:?Missing production Pages project}"
+          : "${CLOUDFLARE_ACCOUNT_ID:?Missing Cloudflare account ID}"
           pnpm wrangler pages deploy dist \
-            --project-name="$CLOUDFLARE_PROJECT_NAME" \
             --branch=main \
             --commit-hash="$GITHUB_SHA"
 
@@ -114,14 +111,11 @@ jobs:
       - name: Deploy to Cloudflare Pages (preview)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PREVIEW_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_PREVIEW_ACCOUNT_ID }}
-          CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PREVIEW_PROJECT_NAME }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing preview API token}"
-          : "${CLOUDFLARE_ACCOUNT_ID:?Missing preview account ID}"
-          : "${CLOUDFLARE_PROJECT_NAME:?Missing preview Pages project}"
+          : "${CLOUDFLARE_ACCOUNT_ID:?Missing Cloudflare account ID}"
           # Always use a non-production branch, including preview runs from main.
           pnpm wrangler pages deploy dist \
-            --project-name="$CLOUDFLARE_PROJECT_NAME" \
             --branch="preview/$GITHUB_REF_NAME" \
             --commit-hash="$GITHUB_SHA"
