@@ -71,7 +71,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing production API token}"
-          pnpm wrangler pages deploy dist --branch=main --commit-hash="$GITHUB_SHA"
+          pnpm wrangler pages deploy dist --branch=master --commit-hash="$GITHUB_SHA"
 
       - name: Tag
         run: |
