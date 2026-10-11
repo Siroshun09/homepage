@@ -19,6 +19,11 @@ jobs:
           cache: true
           require-lockfile: true
 
+      - name: Inspect deployment workflow formatting
+        run: |
+          pnpm exec oxfmt .github/workflows/deploy.yml
+          git diff -- .github/workflows/deploy.yml
+
       - parallel:
           - run: pnpm build
           - run: pnpm format:check
