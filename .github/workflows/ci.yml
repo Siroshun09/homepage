@@ -19,11 +19,6 @@ jobs:
           cache: true
           require-lockfile: true
 
-      - name: Inspect deployment Markdown formatting
-        run: |
-          pnpm exec oxfmt docs/deployment.md
-          git diff -- docs/deployment.md
-
       - parallel:
           - run: pnpm build
           - run: pnpm format:check
