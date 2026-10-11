@@ -1,19 +1,22 @@
-# Cloudflare Pages deployment
+# Site deployment
 
 Deployments run manually from **Actions → Deploy → Run workflow**.
 Select the branch and optionally check **preview**.
 
 ## Routing
 
-- `main`, preview unchecked: production Cloudflare Pages deployment.
+- `main`, preview unchecked: GitHub Pages and production Cloudflare Pages.
 - `main`, preview checked: preview Cloudflare Pages deployment.
 - Any other branch, with or without preview checked: preview deployment.
 
-Production deployments use `--branch=main` and create a
-`production/<short SHA>` Git tag after successful deployment.
-Preview deployments use `--branch=preview/<selected branch>`.
+Production deployments publish to the existing GitHub Pages repository
+(`Siroshun09/siroshun09.github.io`) and Cloudflare Pages with
+`--branch=main`. The same production job creates a
+`production/<short SHA>` Git tag only after both deployments succeed.
+Preview deployments publish only to Cloudflare Pages with
+`--branch=preview/<selected branch>`.
 This keeps preview runs from `main` out of the Cloudflare Pages
-production branch. GitHub Pages is not deployed.
+production branch. Preview never publishes to GitHub Pages.
 
 **Branch migration:** the current default branch is `master`, not
 `main`. The workflow treats `master` as preview only. Rename the
@@ -28,6 +31,7 @@ Create `production` and `preview` GitHub environments under
 
 Set these values in the **production environment**:
 
+- Secret `GH_PAGES_DEPLOY_TOKEN`: existing token with write permission to the external GitHub Pages repository.
 - Secret `CLOUDFLARE_PRODUCTION_API_TOKEN`: token for the production account.
 - Variable `CLOUDFLARE_PRODUCTION_ACCOUNT_ID`: production account ID.
 - Variable `CLOUDFLARE_PRODUCTION_PROJECT_NAME`: production Pages project.
@@ -39,7 +43,8 @@ Set these values in the **preview environment**:
 - Variable `CLOUDFLARE_PREVIEW_PROJECT_NAME`: preview Pages project.
 
 Restrict the GitHub `production` environment to the `main` branch.
-Consider required reviewers. Do not use repository-scoped deploy secrets.
+Consider required reviewers. Store deployment secrets in their respective
+GitHub environments, including the existing GitHub Pages deploy token.
 Remove or rotate the old repository-scoped `CLOUDFLARE_API_TOKEN`
 after migrating.
 
