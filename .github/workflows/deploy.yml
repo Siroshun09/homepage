@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       preview:
-        description: Deploy to preview even when running from main
+        description: Deploy to preview even when running from master
         type: boolean
         default: false
         required: true
@@ -36,7 +36,7 @@ jobs:
           overwrite: true
 
   deploy-production:
-    if: github.ref == 'refs/heads/main' && !inputs.preview
+    if: github.ref == 'refs/heads/master' && !inputs.preview
     needs: build
     runs-on: ubuntu-latest
     environment: production
@@ -84,7 +84,7 @@ jobs:
           git push origin "$TAG"
 
   deploy-preview:
-    if: github.ref != 'refs/heads/main' || inputs.preview
+    if: github.ref != 'refs/heads/master' || inputs.preview
     needs: build
     runs-on: ubuntu-latest
     environment: preview
@@ -109,5 +109,5 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PREVIEW_API_TOKEN }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing preview API token}"
-          # Always use a non-production branch, including preview runs from main.
+          # Always use a non-production branch, including preview runs from master.
           pnpm wrangler pages deploy dist --branch="preview/$GITHUB_REF_NAME" --commit-hash="$GITHUB_SHA"
