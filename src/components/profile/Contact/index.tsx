@@ -1,5 +1,4 @@
-import { KarlaFont } from "../../../fonts/KarlaFont";
-import { RubikFont } from "../../../fonts/RubikFont";
+import fonts from "../../../fonts/styles.module.css";
 
 export type Props = {
   onClickBack: () => void;
@@ -8,13 +7,13 @@ export type Props = {
 export const Contact = (props: Props) => {
   return (
     <>
-      <KarlaFont>
+      <div class={fonts.karlaFont}>
         <h1 class="mx-auto mt-3 mb-5 border-b border-gray-300 px-1 py-2 text-4xl tracking-wider text-gray-500">
           How to contact me?
         </h1>
-      </KarlaFont>
+      </div>
 
-      <RubikFont>
+      <div class={fonts.rubikFont}>
         <p class="text-lg">X (Twitter) or Discord DM is the quickest way to get a response.</p>
 
         <ul class="my-3 text-lg">
@@ -43,7 +42,7 @@ export const Contact = (props: Props) => {
             Back to profile
           </button>
         </p>
-      </RubikFont>
+      </div>
     </>
   );
 };

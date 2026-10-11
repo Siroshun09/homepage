@@ -1,17 +1,12 @@
-export type IconProps = {
-  height: string;
-  width: string;
-};
-
 /* Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc. */
 
-export const TwitterIcon = (props: IconProps) => {
+export const TwitterIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      width={props.width}
-      height={props.height}
+      width="1em"
+      height="1em"
     >
       <title>Twitter</title>
       <path
@@ -22,13 +17,13 @@ export const TwitterIcon = (props: IconProps) => {
   );
 };
 
-export const GitHubIcon = (props: IconProps) => {
+export const GitHubIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      width={props.width}
-      height={props.height}
+      width="1em"
+      height="1em"
     >
       <title>GitHub</title>
       <path
