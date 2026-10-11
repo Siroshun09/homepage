@@ -19,4 +19,7 @@ jobs:
           cache: true
           require-lockfile: true
 
-      - run: pnpm build
+      - parallel:
+          - run: pnpm build
+          - run: pnpm format:check
+          - run: pnpm lint:ci
