@@ -71,9 +71,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing production API token}"
-          pnpm wrangler pages deploy dist \
-            --branch=main \
-            --commit-hash="$GITHUB_SHA"
+          pnpm wrangler pages deploy dist --branch=main --commit-hash="$GITHUB_SHA"
 
       - name: Tag
         run: |
@@ -112,6 +110,4 @@ jobs:
         run: |
           : "${CLOUDFLARE_API_TOKEN:?Missing preview API token}"
           # Always use a non-production branch, including preview runs from main.
-          pnpm wrangler pages deploy dist \
-            --branch="preview/$GITHUB_REF_NAME" \
-            --commit-hash="$GITHUB_SHA"
+          pnpm wrangler pages deploy dist --branch="preview/$GITHUB_REF_NAME" --commit-hash="$GITHUB_SHA"
