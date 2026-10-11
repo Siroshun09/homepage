@@ -46,16 +46,49 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Deploy to production
-        uses: ./.github/actions/deploy-site
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
         with:
-          artifact-name: homepage-build-${{ github.run_number }}
-          production: "true"
-          github-pages-token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
-          cloudflare-api-token: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
-          cloudflare-account-id: ${{ vars.CLOUDFLARE_PRODUCTION_ACCOUNT_ID }}
-          cloudflare-project-name: ${{ vars.CLOUDFLARE_PRODUCTION_PROJECT_NAME }}
-          cloudflare-branch: main
+          cache: true
+          require-lockfile: true
+
+      - name: Download artifacts
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: homepage-build-${{ github.run_number }}
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          external_repository: Siroshun09/siroshun09.github.io
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          publish_dir: ./dist
+          allow_empty_commit: true
+
+      - name: Deploy to Cloudflare Pages (production)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_PRODUCTION_ACCOUNT_ID }}
+          CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PRODUCTION_PROJECT_NAME }}
+        run: |
+          : "${CLOUDFLARE_API_TOKEN:?Missing production API token}"
+          : "${CLOUDFLARE_ACCOUNT_ID:?Missing production account ID}"
+          : "${CLOUDFLARE_PROJECT_NAME:?Missing production Pages project}"
+          pnpm wrangler pages deploy dist \
+            --project-name="$CLOUDFLARE_PROJECT_NAME" \
+            --branch=main \
+            --commit-hash="$GITHUB_SHA"
+
+      - name: Tag
+        run: |
+          TAG="production/$(git rev-parse --short HEAD)"
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, skipping"
+            exit 0
+          fi
+          git tag "$TAG"
+          git push origin "$TAG"
 
   deploy-preview:
     if: github.ref != 'refs/heads/main' || inputs.preview
@@ -66,13 +99,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Deploy to preview
-        uses: ./.github/actions/deploy-site
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
         with:
-          artifact-name: homepage-build-${{ github.run_number }}
-          production: "false"
-          cloudflare-api-token: ${{ secrets.CLOUDFLARE_PREVIEW_API_TOKEN }}
-          cloudflare-account-id: ${{ vars.CLOUDFLARE_PREVIEW_ACCOUNT_ID }}
-          cloudflare-project-name: ${{ vars.CLOUDFLARE_PREVIEW_PROJECT_NAME }}
-          # Never use the project's production branch, even for preview runs from main.
-          cloudflare-branch: preview/${{ github.ref_name }}
+          cache: true
+          require-lockfile: true
+
+      - name: Download artifacts
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: homepage-build-${{ github.run_number }}
+          path: dist
+
+      - name: Deploy to Cloudflare Pages (preview)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PREVIEW_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_PREVIEW_ACCOUNT_ID }}
+          CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PREVIEW_PROJECT_NAME }}
+        run: |
+          : "${CLOUDFLARE_API_TOKEN:?Missing preview API token}"
+          : "${CLOUDFLARE_ACCOUNT_ID:?Missing preview account ID}"
+          : "${CLOUDFLARE_PROJECT_NAME:?Missing preview Pages project}"
+          # Always use a non-production branch, including preview runs from main.
+          pnpm wrangler pages deploy dist \
+            --project-name="$CLOUDFLARE_PROJECT_NAME" \
+            --branch="preview/$GITHUB_REF_NAME" \
+            --commit-hash="$GITHUB_SHA"
