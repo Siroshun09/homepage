@@ -1,6 +1,7 @@
-import fonts from "../../../fonts/styles.module.css";
 import { GitHubIcon, TwitterIcon } from "../../icons";
 import Icon from "./icon.jpg";
+
+import fonts from "../../../fonts/styles.module.css";
 
 export type Props = {
   onClickContactLink: () => void;
