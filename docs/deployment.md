@@ -1,65 +1,69 @@
-# Cloudflare Pages deployments
+# Cloudflare Pages deployment
 
-Deployments are manual: in **Actions → Deploy → Run workflow**, select the
-branch and optionally check **preview**.
+Deployments run manually from **Actions → Deploy → Run workflow**.
+Select the branch and optionally check **preview**.
 
-| Selected branch | Preview checkbox | Target |
-| --- | --- | --- |
-| `main` | unchecked | Cloudflare Pages production |
-| `main` | checked | Cloudflare Pages preview |
-| any other branch | either | Cloudflare Pages preview |
+## Routing
 
-Production runs publish with `--branch=main` and create a
-`production/<short SHA>` git tag after a successful deploy. Preview runs
-publish with `--branch=preview/<selected branch>` so a preview run from
-`main` cannot be classified as a production deployment by Pages when the
-Pages project's production branch is `main`. Nothing is deployed to GitHub
-Pages.
+- `main`, preview unchecked: production Cloudflare Pages deployment.
+- `main`, preview checked: preview Cloudflare Pages deployment.
+- Any other branch, with or without preview checked: preview deployment.
 
-**Branch migration:** the repository currently uses `master` as its default
-branch, not `main`. With this workflow, `master` deploys to preview only.
-Rename the default branch to `main` (and update other workflows such as
-`ci.yml`) before expecting production deploys; alternatively, explicitly
-change the production branch condition and Pages production branch together.
+Production deployments use `--branch=main` and create a
+`production/<short SHA>` Git tag after successful deployment.
+Preview deployments use `--branch=preview/<selected branch>`.
+This keeps preview runs from `main` out of the Cloudflare Pages
+production branch. GitHub Pages is not deployed.
 
-## Required configuration
+**Branch migration:** the current default branch is `master`, not
+`main`. The workflow treats `master` as preview only. Rename the
+default branch to `main` and update other workflows (including CI),
+or explicitly change the production branch conditions and Cloudflare
+Pages configuration together before using production deployments.
 
-Create two GitHub **environments** under **Settings → Environments**:
-`production` and `preview`. Add the following **environment-scoped**
-secrets and variables, not repository-scoped secrets:
+## GitHub configuration
 
-| Environment | Type | Name | Value |
-| --- | --- | --- | --- |
-| `production` | Secret | `CLOUDFLARE_PRODUCTION_API_TOKEN` | Token scoped to the production Cloudflare account |
-| `production` | Variable | `CLOUDFLARE_PRODUCTION_ACCOUNT_ID` | Production Cloudflare account ID |
-| `production` | Variable | `CLOUDFLARE_PRODUCTION_PROJECT_NAME` | Production Pages project (currently `homepage`, if unchanged) |
-| `preview` | Secret | `CLOUDFLARE_PREVIEW_API_TOKEN` | Token scoped **only** to the preview Cloudflare account |
-| `preview` | Variable | `CLOUDFLARE_PREVIEW_ACCOUNT_ID` | Preview Cloudflare account ID |
-| `preview` | Variable | `CLOUDFLARE_PREVIEW_PROJECT_NAME` | Preview Pages project name |
+Create `production` and `preview` GitHub environments under
+**Settings → Environments**.
 
-Give each token only **Account → Cloudflare Pages → Edit** (`Pages Write`)
-permission on its designated Cloudflare **account**. The preview account
-must be **different** from the production account for the preview token
-to be technically incapable of updating production Pages projects.
-Create a separate Pages project in the preview account, e.g.
-`homepage-preview`. Configure both projects' **production branch as
-`main`**, so the `preview/...` branches are always preview deployments.
-For an existing Direct Upload Pages project, the production branch is
-changed through Cloudflare's Update Project API, not the dashboard
-branch controls.
+Set these values in the **production environment**:
 
-**Important:** Separate GitHub environments and separate Pages projects
-within the *same* Cloudflare account do **not** create an authorization
-boundary: Pages editing tokens are account-scoped, not project- or
-branch-scoped. Do not give the preview token membership in / scope to the
-production account. Restrict the GitHub `production` environment to the
-`main` branch and consider required reviewers. Remove/rotate the old
-repository-scoped `CLOUDFLARE_API_TOKEN` after migrating it.
+- Secret `CLOUDFLARE_PRODUCTION_API_TOKEN`: token for the production account.
+- Variable `CLOUDFLARE_PRODUCTION_ACCOUNT_ID`: production account ID.
+- Variable `CLOUDFLARE_PRODUCTION_PROJECT_NAME`: production Pages project.
 
-No Cloudflare credentials or Pages projects are created by this PR. Configure
-the environments, accounts, tokens, and projects before running the deploy
-workflow. The workflow fails rather than silently deploying when its required
-credentials or target settings are missing.
+Set these values in the **preview environment**:
+
+- Secret `CLOUDFLARE_PREVIEW_API_TOKEN`: token for the preview account.
+- Variable `CLOUDFLARE_PREVIEW_ACCOUNT_ID`: preview account ID.
+- Variable `CLOUDFLARE_PREVIEW_PROJECT_NAME`: preview Pages project.
+
+Restrict the GitHub `production` environment to the `main` branch.
+Consider required reviewers. Do not use repository-scoped deploy secrets.
+Remove or rotate the old repository-scoped `CLOUDFLARE_API_TOKEN`
+after migrating.
+
+## Cloudflare configuration and security
+
+Use two Cloudflare accounts: one for production, one for preview.
+Create a distinct Pages project in each account. Each project's
+configured **production branch** must be `main`, so deployments to
+`preview/...` branches are preview deployments. To change the
+production branch on a Direct Upload project, use Cloudflare's
+Update Project API.
+
+Create each API token with only **Account → Cloudflare Pages → Edit**
+(`Pages Write`) permission, scoped only to its own Cloudflare account.
+
+**Separate Cloudflare accounts are necessary for true isolation.**
+Cloudflare Pages editing permissions are account-scoped, not
+project- or branch-scoped. Different GitHub environments, different
+API tokens, and different Pages projects within the *same* Cloudflare
+account do not prevent the preview token from changing production.
+
+This PR does not create Cloudflare resources or GitHub secrets.
+Configure all resources before using the workflow. Missing credentials
+or project settings cause a deployment failure.
 
 ## References
 
