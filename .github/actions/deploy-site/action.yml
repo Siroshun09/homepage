@@ -1,0 +1,77 @@
+name: Deploy site
+description: Deploy the built site to Cloudflare Pages and, for production, GitHub Pages
+
+inputs:
+  artifact-name:
+    description: Build artifact to deploy
+    required: true
+  production:
+    description: Whether to deploy to GitHub Pages and create a production tag
+    required: true
+  github-pages-token:
+    description: GitHub Pages deploy token (production only)
+    required: false
+  cloudflare-api-token:
+    description: Cloudflare API token for the target environment
+    required: true
+  cloudflare-account-id:
+    description: Cloudflare account ID for the target environment
+    required: true
+  cloudflare-project-name:
+    description: Cloudflare Pages project name
+    required: true
+  cloudflare-branch:
+    description: Cloudflare Pages deployment branch
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Setup pnpm and Node.js
+      uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
+      with:
+        cache: true
+        require-lockfile: true
+
+    - name: Download artifacts
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: dist
+
+    - name: Deploy to GitHub Pages
+      if: inputs.production == 'true'
+      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+      with:
+        external_repository: Siroshun09/siroshun09.github.io
+        personal_token: ${{ inputs.github-pages-token }}
+        publish_dir: ./dist
+        allow_empty_commit: true
+
+    - name: Deploy to Cloudflare Pages
+      shell: bash
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare-api-token }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ inputs.cloudflare-account-id }}
+        CLOUDFLARE_PROJECT_NAME: ${{ inputs.cloudflare-project-name }}
+        CLOUDFLARE_BRANCH: ${{ inputs.cloudflare-branch }}
+      run: |
+        : "${CLOUDFLARE_API_TOKEN:?Missing Cloudflare API token}"
+        : "${CLOUDFLARE_ACCOUNT_ID:?Missing Cloudflare account ID}"
+        : "${CLOUDFLARE_PROJECT_NAME:?Missing Cloudflare Pages project}"
+        pnpm wrangler pages deploy dist \
+          --project-name="$CLOUDFLARE_PROJECT_NAME" \
+          --branch="$CLOUDFLARE_BRANCH" \
+          --commit-hash="$GITHUB_SHA"
+
+    - name: Tag
+      if: inputs.production == 'true'
+      shell: bash
+      run: |
+        TAG="production/$(git rev-parse --short HEAD)"
+        if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
+          echo "Tag $TAG already exists, skipping"
+          exit 0
+        fi
+        git tag "$TAG"
+        git push origin "$TAG"
