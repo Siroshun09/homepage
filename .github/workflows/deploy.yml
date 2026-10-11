@@ -40,6 +40,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment: production
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -56,6 +58,14 @@ jobs:
           name: homepage-build-${{ github.run_number }}
           path: dist
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          external_repository: Siroshun09/siroshun09.github.io
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          publish_dir: ./dist
+          allow_empty_commit: true
+
       - name: Deploy to Cloudflare Pages (production)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
@@ -69,6 +79,16 @@ jobs:
             --project-name="$CLOUDFLARE_PROJECT_NAME" \
             --branch=main \
             --commit-hash="$GITHUB_SHA"
+
+      - name: Tag
+        run: |
+          TAG="production/$(git rev-parse --short HEAD)"
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, skipping"
+            exit 0
+          fi
+          git tag "$TAG"
+          git push origin "$TAG"
 
   deploy-preview:
     if: github.ref != 'refs/heads/main' || inputs.preview
@@ -106,22 +126,3 @@ jobs:
             --branch="preview/$GITHUB_REF_NAME" \
             --commit-hash="$GITHUB_SHA"
 
-  tag-production:
-    if: github.ref == 'refs/heads/main' && !inputs.preview
-    needs: deploy-production
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Tag
-        run: |
-          TAG="production/$(git rev-parse --short HEAD)"
-          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
-            echo "Tag $TAG already exists, skipping"
-            exit 0
-          fi
-          git tag "$TAG"
-          git push origin "$TAG"
