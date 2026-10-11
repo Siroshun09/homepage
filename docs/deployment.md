@@ -58,7 +58,7 @@ Create each API token with only **Account → Cloudflare Pages → Edit**
 **Separate Cloudflare accounts are necessary for true isolation.**
 Cloudflare Pages editing permissions are account-scoped, not
 project- or branch-scoped. Different GitHub environments, different
-API tokens, and different Pages projects within the *same* Cloudflare
+API tokens, and different Pages projects within the _same_ Cloudflare
 account do not prevent the preview token from changing production.
 
 This PR does not create Cloudflare resources or GitHub secrets.
