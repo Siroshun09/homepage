@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "pnpm run check && vite build",
+    "check": "pnpm run format:check && pnpm run lint:ci && pnpm run typecheck",
     "generate": "vite build",
     "typecheck": "tsc -b",
     "format": "oxfmt",
