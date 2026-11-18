@@ -49,3 +49,22 @@ body {
     transform: rotateX(0deg);
   }
 }
+
+/* Icons are drawn with the SVG as a mask so that they follow `currentColor`. */
+@utility icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+@utility icon-twitter {
+  mask-image: url("./icons/twitter.svg");
+}
+
+@utility icon-github {
+  mask-image: url("./icons/github.svg");
+}

@@ -17,11 +17,110 @@
   <body>
     <main class="flex h-full justify-center bg-linear-to-br from-indigo-300 to-blue-400">
       <div class="my-auto h-max w-max rounded-3xl bg-white p-5 fade-up">
-        <!-- @include src/partials/profile.html -->
+        <section id="profile">
+          <img
+            src="src/icon.jpg"
+            alt="Siroshun's Icon"
+            class="mx-auto my-5 h-48 w-48 rounded-full"
+            decoding="async"
+            fetchpriority="high"
+            width="192"
+            height="192"
+          />
 
-        <!-- @include src/partials/contact.html -->
+          <div class="font-karla">
+            <h1
+              class="mx-auto my-5 border-b border-gray-300 px-10 py-1 text-center text-5xl tracking-wider text-gray-500"
+            >
+              Siroshun
+            </h1>
+          </div>
 
-        <!-- @include src/partials/footer.html -->
+          <div class="font-rubik">
+            <div class="text-center text-xl text-gray-900">
+              <p>Hello, I am a Software Developer from Japan.</p>
+              <p>I develop various software mainly in Java and Go.</p>
+            </div>
+
+            <div class="my-10 flex justify-center text-5xl">
+              <a
+                href="https://twitter.com/siroshun09"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="cursor-pointer px-5 text-blue-300 hover:text-blue-400 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
+                aria-label="Twitter: @siroshun09 (opens in a new tab)"
+              >
+                <span class="icon icon-twitter"></span>
+              </a>
+              <a
+                href="https://github.com/Siroshun09"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="cursor-pointer px-5 text-blue-300 hover:text-blue-400 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:outline-none"
+                aria-label="GitHub: Siroshun09 (opens in a new tab)"
+              >
+                <span class="icon icon-github"></span>
+              </a>
+            </div>
+
+            <hr class="my-3 text-gray-200" />
+
+            <p class="text-center text-base">
+              <button
+                class="cursor-pointer text-blue-400 hover:text-blue-700"
+                type="button"
+                data-show="contact"
+              >
+                Contact
+              </button>
+            </p>
+          </div>
+        </section>
+
+        <section id="contact" hidden>
+          <div class="font-karla">
+            <h1
+              class="mx-auto mt-3 mb-5 border-b border-gray-300 px-1 py-2 text-4xl tracking-wider text-gray-500"
+            >
+              How to contact me?
+            </h1>
+          </div>
+
+          <div class="font-rubik">
+            <p class="text-lg">X (Twitter) or Discord DM is the quickest way to get a response.</p>
+
+            <ul class="my-3 text-lg">
+              <li>
+                X (Twitter):
+                <a class="text-blue-500 hover:text-blue-700" href="https://x.com/siroshun09"
+                  >Siroshun09</a
+                >
+              </li>
+              <li>
+                Discord:
+                <code class="rounded bg-gray-200 px-1 tracking-wider text-gray-700">siroshun</code>
+              </li>
+            </ul>
+
+            <p class="text-lg">If you are using Discord, please send me a friend request first.</p>
+
+            <hr class="my-3 text-gray-200" />
+
+            <p class="text-center text-base">
+              <button
+                class="cursor-pointer text-blue-400 hover:text-blue-700"
+                type="button"
+                data-show="profile"
+              >
+                Back to profile
+              </button>
+            </p>
+          </div>
+        </section>
+
+        <footer class="text-center font-rubik">
+          <small class="text-base">© 2021-2026 Siroshun</small>
+        </footer>
       </div>
     </main>
   </body>
