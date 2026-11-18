@@ -1,10 +1,10 @@
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
-import solid from "vite-plugin-solid";
 
 export default defineConfig({
-  plugins: [solid(), tailwindcss()],
+  plugins: [tailwindcss()],
   build: {
+    modulePreload: { polyfill: false },
     cssMinify: "lightningcss",
     chunkSizeWarningLimit: 600,
   },

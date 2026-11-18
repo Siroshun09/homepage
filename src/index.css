@@ -8,7 +8,44 @@ html {
   height: 100%;
 }
 
-body,
-#root {
+body {
   height: 100%;
+}
+
+@utility font-karla {
+  font-family:
+    "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@utility font-rubik {
+  font-family:
+    "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@utility fade-up {
+  animation-name: fade-up;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: rotateX(25deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }

@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "4.3.5",
-    "solid-js": "1.9.18",
     "tailwindcss": "4.3.5"
   },
   "devDependencies": {
@@ -24,7 +23,6 @@
     "oxlint": "1.92.0",
     "typescript": "7.0.2",
     "vite": "8.3.6",
-    "vite-plugin-solid": "2.11.15",
     "wrangler": "4.158.0"
   },
   "packageManager": "pnpm@12.18.0"
