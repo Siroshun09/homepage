@@ -1,40 +1,119 @@
-@import "tailwindcss";
+:root {
+  --gray-200: oklch(92.8% 0.006 264.531);
+  --gray-300: oklch(87.2% 0.01 258.338);
+  --gray-500: oklch(55.1% 0.027 264.364);
+  --gray-700: oklch(37.3% 0.034 259.733);
+  --gray-900: oklch(21% 0.034 264.665);
+  --blue-300: oklch(80.9% 0.105 251.813);
+  --blue-400: oklch(70.7% 0.165 254.624);
+  --blue-500: oklch(62.3% 0.214 259.815);
+  --blue-600: oklch(54.6% 0.245 262.881);
+  --blue-700: oklch(48.8% 0.243 264.376);
+  --indigo-300: oklch(78.5% 0.115 274.713);
+
+  --font-fallback:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reset */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+[hidden] {
+  display: none !important;
+}
 
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
   height: 100%;
+  line-height: 1.5;
 }
 
 body {
   height: 100%;
-}
-
-@utility font-karla {
-  font-family:
-    "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-@utility font-rubik {
-  font-family:
-    "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
+  font-family: "Rubik", var(--font-fallback);
   font-optical-sizing: auto;
   font-weight: 400;
-  font-style: normal;
 }
 
-@utility fade-up {
-  animation-name: fade-up;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+h1 {
+  font-family: "Karla", var(--font-fallback);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--gray-300);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+small {
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+hr {
+  height: 0;
+  margin-block: 0.75rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 1em;
+}
+
+button {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Layout */
+
+main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, var(--indigo-300), var(--blue-400));
+  background-image: linear-gradient(to bottom right in oklab, var(--indigo-300), var(--blue-400));
+}
+
+.card {
+  width: max-content;
+  height: max-content;
+  margin-block: auto;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background-color: #fff;
   opacity: 0;
+  animation: fade-up 1.5s forwards;
   will-change: transform, opacity;
 }
 
@@ -50,8 +129,52 @@ body {
   }
 }
 
+/* Profile */
+
+.avatar {
+  width: 12rem;
+  height: 12rem;
+  margin: 1.25rem auto;
+  border-radius: 9999px;
+}
+
+#profile h1 {
+  margin-block: 1.25rem;
+  padding: 0.25rem 2.5rem;
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-align: center;
+  color: var(--gray-900);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin-block: 2.5rem;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.social a {
+  padding-inline: 1.25rem;
+  color: var(--blue-300);
+}
+
+.social a:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 4px var(--blue-600);
+}
+
 /* Icons are drawn with the SVG as a mask so that they follow `currentColor`. */
-@utility icon {
+.icon {
   display: block;
   width: 1em;
   height: 1em;
@@ -61,10 +184,70 @@ body {
   mask-repeat: no-repeat;
 }
 
-@utility icon-twitter {
+.icon-twitter {
   mask-image: url("./icons/twitter.svg");
 }
 
-@utility icon-github {
+.icon-github {
   mask-image: url("./icons/github.svg");
+}
+
+/* Contact */
+
+#contact h1 {
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.5rem 0.25rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+#contact p:not(.switch),
+#contact ul {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+#contact ul {
+  margin-block: 0.75rem;
+}
+
+#contact li a {
+  color: var(--blue-500);
+}
+
+#contact code {
+  padding-inline: 0.25rem;
+  border-radius: 0.25rem;
+  letter-spacing: 0.05em;
+  color: var(--gray-700);
+  background-color: var(--gray-200);
+}
+
+/* Shared */
+
+.switch {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.switch button {
+  color: var(--blue-400);
+}
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (hover: hover) {
+  .social a:hover {
+    color: var(--blue-400);
+  }
+
+  #contact li a:hover,
+  .switch button:hover {
+    color: var(--blue-700);
+  }
 }
