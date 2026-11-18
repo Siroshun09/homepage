@@ -15,6 +15,16 @@
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+html {
+  height: 100%;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Reset */
 
 *,
@@ -26,58 +36,17 @@
   border: 0 solid;
 }
 
-[hidden] {
-  display: none !important;
-}
-
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  height: 100%;
-  line-height: 1.5;
-}
-
-body {
-  height: 100%;
-  font-family: "Rubik", var(--font-fallback);
-  font-optical-sizing: auto;
-  font-weight: 400;
-}
-
-h1 {
-  font-family: "Karla", var(--font-fallback);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--gray-500);
-  border-bottom: 1px solid var(--gray-300);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 a {
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 
-small {
-  font-size: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-hr {
-  height: 0;
-  margin-block: 0.75rem;
-  border-top: 1px solid var(--gray-200);
+button {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
 }
 
 code {
@@ -87,15 +56,18 @@ code {
   font-size: 1em;
 }
 
-button {
-  font: inherit;
-  letter-spacing: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
+ul {
+  list-style: none;
 }
 
-/* Layout */
+/* Page */
+
+body {
+  height: 100%;
+  font-family: "Rubik", var(--font-fallback);
+  font-weight: 400;
+  font-optical-sizing: auto;
+}
 
 main {
   display: flex;
@@ -112,7 +84,6 @@ main {
   padding: 1.25rem;
   border-radius: 1.5rem;
   background-color: #fff;
-  opacity: 0;
   animation: fade-up 1.5s forwards;
   will-change: transform, opacity;
 }
@@ -129,48 +100,92 @@ main {
   }
 }
 
+h1 {
+  border-bottom: 1px solid var(--gray-300);
+  font-family: "Karla", var(--font-fallback);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+}
+
+hr {
+  margin-block: 0.75rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.switch {
+  text-align: center;
+
+  & button {
+    color: var(--blue-400);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-700);
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+
+  & small {
+    font-size: inherit;
+  }
+}
+
 /* Profile */
 
-.avatar {
-  width: 12rem;
-  height: 12rem;
-  margin: 1.25rem auto;
-  border-radius: 9999px;
-}
+#profile {
+  & .avatar {
+    display: block;
+    width: 12rem;
+    height: 12rem;
+    margin: 1.25rem auto;
+    border-radius: 50%;
+  }
 
-#profile h1 {
-  margin-block: 1.25rem;
-  padding: 0.25rem 2.5rem;
-  font-size: 3rem;
-  line-height: 1;
-  text-align: center;
-}
+  & h1 {
+    margin-block: 1.25rem;
+    padding: 0.25rem 2.5rem;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+  }
 
-.intro {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  text-align: center;
-  color: var(--gray-900);
-}
+  & .intro {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: var(--gray-900);
+  }
 
-.social {
-  display: flex;
-  justify-content: center;
-  margin-block: 2.5rem;
-  font-size: 3rem;
-  line-height: 1;
-}
+  & .social {
+    display: flex;
+    justify-content: center;
+    margin-block: 2.5rem;
+    font-size: 3rem;
+    line-height: 1;
 
-.social a {
-  padding-inline: 1.25rem;
-  color: var(--blue-300);
-}
+    & a {
+      padding-inline: 1.25rem;
+      color: var(--blue-300);
 
-.social a:focus {
-  outline: none;
-  box-shadow:
-    0 0 0 2px #fff,
-    0 0 0 4px var(--blue-600);
+      @media (hover: hover) {
+        &:hover {
+          color: var(--blue-400);
+        }
+      }
+
+      &:focus-visible {
+        outline: none;
+        box-shadow:
+          0 0 0 2px #fff,
+          0 0 0 4px var(--blue-600);
+      }
+    }
+  }
 }
 
 /* Icons are drawn with the SVG as a mask so that they follow `currentColor`. */
@@ -179,75 +194,51 @@ main {
   width: 1em;
   height: 1em;
   background-color: currentColor;
-  mask-position: center;
-  mask-size: contain;
-  mask-repeat: no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
 .icon-twitter {
-  mask-image: url("./icons/twitter.svg");
+  --icon: url("./icons/twitter.svg");
 }
 
 .icon-github {
-  mask-image: url("./icons/github.svg");
+  --icon: url("./icons/github.svg");
 }
 
 /* Contact */
 
-#contact h1 {
-  margin: 0.75rem 0 1.25rem;
-  padding: 0.5rem 0.25rem;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-#contact p:not(.switch),
-#contact ul {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-#contact ul {
-  margin-block: 0.75rem;
-}
-
-#contact li a {
-  color: var(--blue-500);
-}
-
-#contact code {
-  padding-inline: 0.25rem;
-  border-radius: 0.25rem;
-  letter-spacing: 0.05em;
-  color: var(--gray-700);
-  background-color: var(--gray-200);
-}
-
-/* Shared */
-
-.switch {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.switch button {
-  color: var(--blue-400);
-}
-
-footer {
-  text-align: center;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-@media (hover: hover) {
-  .social a:hover {
-    color: var(--blue-400);
+#contact {
+  & h1 {
+    margin: 0.75rem 0 1.25rem;
+    padding: 0.5rem 0.25rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
-  #contact li a:hover,
-  .switch button:hover {
-    color: var(--blue-700);
+  & :is(p, ul) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  & ul {
+    margin-block: 0.75rem;
+  }
+
+  & a {
+    color: var(--blue-500);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-700);
+      }
+    }
+  }
+
+  & code {
+    padding-inline: 0.25rem;
+    border-radius: 0.25rem;
+    letter-spacing: 0.05em;
+    color: var(--gray-700);
+    background-color: var(--gray-200);
   }
 }
