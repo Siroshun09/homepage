@@ -188,13 +188,22 @@ footer {
   }
 }
 
-/* Icons are drawn with the SVG as a mask so that they follow `currentColor`. */
+/*
+ * Icons are drawn with the SVG as a mask so that they follow `currentColor`.
+ * In forced colors mode the background would be replaced with the page background and hide the
+ * icon, so opt out of the adjustment and use the system link color instead.
+ */
 .icon {
   display: block;
   width: 1em;
   height: 1em;
   background-color: currentColor;
+  forced-color-adjust: none;
   mask: var(--icon) center / contain no-repeat;
+
+  @media (forced-colors: active) {
+    background-color: LinkText;
+  }
 }
 
 .icon-twitter {
